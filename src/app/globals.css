@@ -7924,3 +7924,59 @@ body.hero-is-scrolled .scroll-indicator {
     min-height: 320px;
   }
 }
+
+/* Official transparent logo placement */
+.brand-logo {
+  display: block;
+  width: 132px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.16));
+}
+
+.nav .brand {
+  min-width: 320px;
+  gap: 14px;
+}
+
+.nav .brand-logo {
+  width: 118px;
+  max-height: 58px;
+}
+
+.nav .brand-mark {
+  display: none;
+}
+
+.footer .brand {
+  align-items: center;
+  min-width: 0;
+}
+
+.footer-brand-logo {
+  width: 150px;
+  max-height: 82px;
+}
+
+.footer .brand-mark {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .nav .brand {
+    min-width: 0;
+  }
+
+  .nav .brand-logo {
+    width: 92px;
+    max-height: 48px;
+  }
+
+  .brand-copy strong {
+    font-size: 0.78rem;
+  }
+
+  .brand-copy small {
+    font-size: 0.56rem;
+  }
+}

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { NAVIGATION_LABELS } from "@/constants/categories";
 import { ROUTES } from "@/constants/routes";
 import { SITE_CONFIG } from "@/constants/config";
@@ -9,7 +10,13 @@ export function Footer() {
       <div className="container footer-grid">
         <div className="footer-brand">
           <Link className="brand" href={ROUTES.HOME}>
-            <span className="brand-mark">VC</span>
+            <Image
+              className="brand-logo footer-brand-logo"
+              src="/visite-cascavel-logo.png"
+              alt="Visite Cascavel Convention & Visitors Bureau"
+              width={220}
+              height={118}
+            />
             <span>
               {SITE_CONFIG.name}
               <small>{SITE_CONFIG.descriptor}</small>
