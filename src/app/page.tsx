@@ -9,10 +9,7 @@ export default function Home() {
         <div className="hero-glow hero-glow-two" />
         <div className="container hero-grid">
           <div className="hero-copy">
-            <span className="eyebrow bright-eyebrow">
-              <span className="dot" />
-              Guia curado das Terras Altas
-            </span>
+            <span className="hero-edition">Edição de inverno · Terras Altas</span>
             <h1>A serra em forma de roteiro.</h1>
             <p className="lead">
               Uma vitrine de eventos, mesas, pousadas e paisagens para quem quer chegar com o
@@ -26,22 +23,19 @@ export default function Home() {
                 Festival em destaque
               </Link>
             </div>
-            <div className="hero-search-card">
-              <div>
+            <div className="hero-itinerary" aria-label="Sugestão de roteiro de fim de semana">
+              <article>
                 <span>Chegada</span>
                 <strong>Sexta ao pôr do sol</strong>
-              </div>
-              <div>
+              </article>
+              <article>
                 <span>Sábado</span>
                 <strong>Feira, trilha leve e jantar</strong>
-              </div>
-              <div>
+              </article>
+              <article>
                 <span>Domingo</span>
                 <strong>Café colonial e mirante</strong>
-              </div>
-              <Link className="dark-button" href="/eventos">
-                Montar roteiro
-              </Link>
+              </article>
             </div>
             <div className="stats hero-stats">
               <div className="stat">
@@ -61,19 +55,14 @@ export default function Home() {
           <div className="scenic-showcase" aria-label="Paisagem turística regional">
             <div className="showcase-card main-photo">
               <div className="photo-label">
-                <span>Fim de semana destaque</span>
+                <span>Fim de semana destaque · 14 jun</span>
                 <strong>festival, produtores e noite no centro histórico</strong>
               </div>
             </div>
-            <div className="showcase-card floating-photo photo-two">
-              <span>trilha guiada</span>
-            </div>
-            <div className="showcase-card floating-photo photo-three">
-              <span>mesa regional</span>
-            </div>
-            <div className="weather-badge">
-              <strong>Serra</strong>
-              <span>agenda, mesa e hospedagem no mesmo lugar</span>
+            <div className="showcase-index">
+              <span>Guia local</span>
+              <strong>04 rotas</strong>
+              <small>gastronomia · natureza · cultura · hospedagem</small>
             </div>
             <div className="event-ticket-mini">
               <span className="date-badge">Destaque</span>
@@ -117,11 +106,18 @@ export default function Home() {
             ))}
           </div>
           <div className="card-grid event-feature-grid">
-            {events.slice(0, 3).map((event) => (
-              <Link className="event-card" href={event.href} key={event.title}>
+            {events.slice(0, 3).map((event, index) => (
+              <Link
+                className={`event-card ${index === 0 ? "event-card-featured" : ""}`}
+                href={event.href}
+                key={event.title}
+              >
                 <div className="event-image" style={{ backgroundImage: `url(${event.image})` }} />
                 <div className="event-body">
-                  <span className="date-badge">{event.date}</span>
+                  <div className="event-meta-line">
+                    <span>{event.category}</span>
+                    <span>{event.date}</span>
+                  </div>
                   <h3>{event.title}</h3>
                   <p className="card-meta">{event.description}</p>
                   <span className="card-cta">Ver detalhes</span>
@@ -184,10 +180,10 @@ export default function Home() {
           <div className="card-grid stay-grid">
             {stays.slice(0, 3).map((stay) => (
               <article className="company-card" key={stay}>
-                <span className="brand-mark">{stay.slice(0, 2)}</span>
+                <span className="stay-label">Hospedagem selecionada</span>
                 <h3>{stay}</h3>
                 <p className="card-meta">
-                  Página da entidade com fotos, endereço, contatos, website e texto comercial.
+                  Endereço, contato direto, fotos e contexto para escolher sem alternar entre abas.
                 </p>
                 <span className="card-cta">Conhecer hospedagem</span>
               </article>
@@ -279,8 +275,8 @@ export default function Home() {
                 <span className="date-badge">Guia especial</span>
                 <h3>Um fim de semana perfeito nas montanhas</h3>
                 <p>
-                  Um roteiro premium para comer bem, descobrir mirantes, escolher hospedagem e
-                  encaixar o festival certo na viagem.
+                  Um roteiro para comer bem, descobrir mirantes, escolher hospedagem e encaixar o
+                  festival certo na viagem.
                 </p>
                 <Link className="pill-button" href="#">
                   Ler roteiro
