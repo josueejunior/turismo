@@ -1,5 +1,11 @@
 import Link from "next/link";
-import { categories, events } from "../data";
+import type { Metadata } from "next";
+import { categories, events, imageOrFallback } from "../data";
+
+export const metadata: Metadata = {
+  title: "Eventos",
+  description: "Lista de eventos futuros com filtros, datas e acesso aos detalhes."
+};
 
 export default function EventsPage() {
   return (
@@ -9,9 +15,9 @@ export default function EventsPage() {
           <div>
             <span className="eyebrow bright-eyebrow">
               <span className="dot" />
-              Agenda viva da região
+              O que fazer em Cascavel
             </span>
-            <h1>Escolha o próximo motivo para sair.</h1>
+            <h1>Eventos futuros com curadoria e acesso direto.</h1>
             <p className="lead">
               Eventos futuros ordenados por proximidade, com filtros por categoria, imagem forte,
               data visível e acesso direto aos detalhes.
@@ -19,8 +25,8 @@ export default function EventsPage() {
           </div>
           <div className="marketplace-panel">
             <span className="date-badge">Mais procurado</span>
-            <h2>Festival Gastronômico</h2>
-            <p>Ingressos abertos, chefs convidados e feira de produtores locais.</p>
+            <h2>Festival Gastronômico de Cascavel</h2>
+            <p>Ingressos abertos, chefs convidados, feira de produtores e programação comercial.</p>
             <Link className="pill-button" href="/eventos/festival-gastronomico-da-serra">
               Comprar agora
             </Link>
@@ -32,7 +38,7 @@ export default function EventsPage() {
         <div className="container listing-layout">
           <aside className="filter-panel">
             <h3>Categorias</h3>
-            <p className="card-meta">Filtre por clima de viagem e encontre a experiência ideal.</p>
+            <p className="card-meta">Filtre a lista abaixo por tipo de evento e encontre a experiência ideal.</p>
             <div className="filter-list">
               {categories.map((category) => (
                 <Link href="#" key={category}>
@@ -45,7 +51,7 @@ export default function EventsPage() {
           <div className="event-list">
             {events.map((event) => (
               <Link className="wide-event" href={event.href} key={event.title}>
-                <div className="event-image" style={{ backgroundImage: `url(${event.image})` }} />
+                <div className="event-image" style={{ backgroundImage: `url(${imageOrFallback(event.image)})` }} />
                 <div>
                   <span className="category-mini">{event.category}</span>
                   <span className="date-badge">{event.date}</span>

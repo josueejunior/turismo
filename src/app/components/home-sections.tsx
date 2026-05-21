@@ -1,18 +1,31 @@
 import Link from "next/link";
-import { cuisines, events, stays } from "../data";
+import {
+  categories,
+  cuisines,
+  events,
+  imageOrFallback,
+  institutionalBackgroundImage,
+  marketplaceCategories,
+  members,
+  posts,
+  restaurants,
+  sectors,
+  siteHeroImage,
+  stays
+} from "../data";
 
 const visualTiles = [
-  ["Gastronomia", "cafés, produtores e jantar com vista", "taste"],
-  ["Natureza", "cachoeiras, mirantes e ar frio", "nature"],
-  ["Cultura", "feiras, música e noites no centro", "culture"],
-  ["Hospedagem", "chalés, pousadas e silêncio", "stay"]
+  ["Onde ir", "parques, cultura, negócios e experiências regionais", "nature"],
+  ["Onde comer", "restaurantes, cafés, bares e sabores autorais", "taste"],
+  ["Onde ficar", "hotéis, pousadas e hospedagens associadas", "stay"],
+  ["Onde comprar", "produtos locais, vouchers e experiências", "culture"]
 ];
 
 const modernSignals = [
-  ["Roteiros inteligentes", "48h de agenda pronta, com tempo realista entre cada parada."],
-  ["Curadoria visual", "Escolha pela atmosfera: frio, vista, mesa, música ou descanso."],
-  ["Camadas locais", "Eventos, produtores e hospedagens conectados numa única narrativa."],
-  ["Experiência leve", "Menos lista infinita. Mais decisão bonita, rápida e segura."]
+  ["Banco de dados preparado", "Cada associado pode exibir logo, banner, fotos, endereço, contato e website."],
+  ["Marketplace institucional", "A navegação funciona como descoberta turística, mas com aparência premium."],
+  ["Banners configuráveis", "Hero e eventos já consideram imagens administráveis e proporção consistente."],
+  ["Fallback visual", "Quando não houver imagem própria, entram fotos genéricas de turismo regional."]
 ];
 
 export function HomeHero() {
@@ -20,32 +33,40 @@ export function HomeHero() {
     <section className="hero cinematic-hero">
       <div className="hero-glow hero-glow-one" />
       <div className="hero-glow hero-glow-two" />
-      <div className="hero-watermark" aria-hidden="true">Serra</div>
+      <div className="hero-watermark" aria-hidden="true">Cascavel</div>
       <div className="container hero-grid">
         <div className="hero-copy">
           <div className="hero-status-strip" aria-label="Status da plataforma">
-            <span>Live routes</span>
-            <strong>12 experiências sincronizadas</strong>
+            <span>Convention Visitors</span>
+            <strong>Convention & Visitors Bureau</strong>
             <i aria-hidden="true" />
           </div>
-          <span className="hero-edition">Edição de inverno · Terras Altas</span>
-          <span className="hero-route-code">SERRA / CURADORIA LOCAL / 48H</span>
+          <span className="hero-edition">Turismo regional · marketplace institucional</span>
+          <span className="hero-route-code">HERO / CARROSSEL CONFIGURÁVEL / BANNER COMERCIAL</span>
           <h1>
-            Uma serra para <em>viver devagar.</em>
+            Descubra o melhor do <em>turismo regional.</em>
           </h1>
-          <p className="lead">Roteiros, sabores e refúgios escolhidos com olhar local.</p>
+          <p className="lead">
+            Uma abertura cinematográfica para turismo regional: banner configurável, campanha comercial
+            em destaque e visual institucional com presença de marca.
+          </p>
+          <form className="hero-search-bar" aria-label="Busca turística">
+            <span aria-hidden="true">⌕</span>
+            <input type="search" aria-label="Buscar experiências" placeholder="Buscar eventos..." />
+            <button type="submit">Buscar</button>
+          </form>
           <div className="hero-signal-panel" aria-label="Resumo da curadoria">
             <span>
-              <strong>48h</strong>
-              roteiro pronto
+              <strong>1920x1080</strong>
+              resolução sugerida
             </span>
             <span>
-              <strong>04</strong>
-              rotas locais
+              <strong>01/04</strong>
+              slide ativo
             </span>
             <span>
-              <strong>curado</strong>
-              por região
+              <strong>ADS</strong>
+              espaço comercial
             </span>
           </div>
           <div className="hero-app-preview" aria-label="Prévia de roteiro inteligente">
@@ -53,7 +74,7 @@ export function HomeHero() {
               <span />
               <span />
               <span />
-              <strong>Terras OS</strong>
+              <strong>Banner Manager</strong>
             </div>
             <div className="app-preview-map">
               <i className="route-node route-node-one" />
@@ -61,56 +82,70 @@ export function HomeHero() {
               <i className="route-node route-node-three" />
             </div>
             <div className="app-preview-row">
-              <span>19h</span>
-              <strong>Festival Gastronômico</strong>
-              <small>12 min</small>
+              <span>Hero</span>
+              <strong>Campanha de turismo regional</strong>
+              <small>ativo</small>
             </div>
             <div className="app-preview-row muted">
-              <span>21h</span>
-              <strong>Noite histórica</strong>
-              <small>centro</small>
+              <span>Ads</span>
+              <strong>Banner comercial vinculado</strong>
+              <small>opcional</small>
             </div>
           </div>
           <div className="hero-actions">
             <Link className="pill-button" href="/eventos">
-              Ver agenda <span aria-hidden="true">→</span>
+              Ver eventos <span aria-hidden="true">→</span>
             </Link>
-            <Link className="ghost-button light-ghost" href="/eventos/festival-gastronomico-da-serra">
-              Festival da Serra
+            <Link className="ghost-button light-ghost" href="#marketplace">
+              Explorar associados
             </Link>
           </div>
         </div>
         <div className="scenic-showcase" aria-label="Paisagem turística regional">
+          <div className="hero-impact-badge" aria-hidden="true">
+            <span>Campanha</span>
+            <strong>Turismo regional</strong>
+          </div>
           <div className="showcase-rail" aria-hidden="true">
-            <span>Campos frios</span>
-            <span>Rotas locais</span>
-            <span>Fim de semana</span>
+            <span>Slide 01</span>
+            <span>Banner</span>
+            <span>Campanha</span>
           </div>
           <div className="hero-compass" aria-hidden="true">
-            <span>TA</span>
+            <span>VC</span>
             <strong>24</strong>
           </div>
           <div className="showcase-mini-photo mini-photo-one" aria-hidden="true" />
           <div className="showcase-mini-photo mini-photo-two" aria-hidden="true" />
-          <div className="showcase-card main-photo">
+          <div className="showcase-card main-photo" style={{ backgroundImage: `url(${siteHeroImage})` }}>
+            <div className="hero-carousel-dots" aria-hidden="true">
+              <span className="active-dot" />
+              <span />
+              <span />
+              <span />
+            </div>
             <div className="photo-label">
-              <span>Fim de semana destaque · 14 jun</span>
-              <strong>festival, produtores e noite histórica</strong>
+              <span>Hero configurável · imagem definida pelo sistema</span>
+              <strong>um banner principal para vender a cidade no primeiro olhar</strong>
             </div>
           </div>
           <div className="showcase-index">
-            <span>Guia local</span>
-            <strong>04 rotas</strong>
-            <small>gastronomia · natureza · cultura</small>
+            <span>Carrossel</span>
+            <strong>01/04</strong>
+            <small>resolução e corte definidos pelo layout</small>
           </div>
           <div className="event-ticket-mini">
-            <strong>Festival Gastronômico da Serra</strong>
+            <span className="commercial-kicker">Banner comercial</span>
+            <strong>Área premium para patrocinador, campanha ou ingresso em destaque.</strong>
             <Link className="pill-button" href="/eventos/festival-gastronomico-da-serra">
-              Comprar ingresso <span aria-hidden="true">→</span>
+              Acessar oferta <span aria-hidden="true">→</span>
             </Link>
           </div>
         </div>
       </div>
+      <a className="scroll-indicator" href="#eventos" aria-label="Rolar para eventos">
+        <span />
+      </a>
     </section>
   );
 }
@@ -136,7 +171,7 @@ export function ModernBentoSection() {
       <div className="container modern-bento-shell">
         <div className="modern-bento-intro">
           <span className="eyebrow">Sistema de descoberta</span>
-          <h2>Uma experiência moderna para decidir melhor a viagem.</h2>
+          <h2>Estrutura pensada para design bonito e implementação viável.</h2>
         </div>
         <div className="modern-bento-grid">
           {modernSignals.map(([title, copy], index) => (
@@ -160,20 +195,27 @@ export function EventsEditorialSection() {
           <div>
             <span className="section-number">01</span>
             <span className="eyebrow">O que fazer</span>
-            <h2>Agenda enxuta, visual e fácil de escolher.</h2>
+            <h2>Eventos com categorias, data visível e caminho claro para compra.</h2>
           </div>
           <Link className="ghost-button" href="/eventos">
             Ver todos <span aria-hidden="true">→</span>
           </Link>
         </div>
+        <div className="category-row tourism-category-row" aria-label="Categorias de eventos">
+          {categories.slice(1).map((category) => (
+            <span className="category-chip" key={category}>
+              {category}
+            </span>
+          ))}
+        </div>
         <div className="section-system-bar">
           <span>Agenda Sync</span>
-          <strong>4 experiências priorizadas</strong>
+          <strong>próximos 3 eventos + botão ver todos</strong>
           <i aria-hidden="true" />
         </div>
         <div className="event-editorial-grid">
           <Link className="event-portrait" href={events[0].href}>
-            <div className="event-portrait-image" style={{ backgroundImage: `url(${events[0].image})` }} />
+            <div className="event-portrait-image" style={{ backgroundImage: `url(${imageOrFallback(events[0].image)})` }} />
             <div>
               <small>Evento principal</small>
               <span>{events[0].date}</span>
@@ -181,9 +223,9 @@ export function EventsEditorialSection() {
             </div>
           </Link>
           <div className="event-side-list">
-            {events.slice(1, 4).map((event) => (
+            {events.slice(1, 3).map((event) => (
               <Link className="event-line" href={event.href} key={event.title}>
-                <div className="event-line-image" style={{ backgroundImage: `url(${event.image})` }} />
+                <div className="event-line-image" style={{ backgroundImage: `url(${imageOrFallback(event.image)})` }} />
                 <div>
                   <span>{event.category} · {event.date}</span>
                   <h3>{event.title}</h3>
@@ -206,22 +248,82 @@ export function TasteEditorialSection() {
         <div className="taste-editorial-copy">
           <span className="section-number">02</span>
           <span className="eyebrow">Onde comer</span>
-          <h2>Sabores com origem, vista e tempo.</h2>
-          <p>Um radar gastronômico com cafés, mesas autorais e produtores que dão identidade à serra.</p>
+          <h2>Categorias gastronômicas para descobrir a cidade pelo paladar.</h2>
+          <p>Um radar gastronômico com cafés, restaurantes, bares e produtores que dão identidade ao destino.</p>
           <div className="section-system-bar compact">
             <span>Taste Radar</span>
-            <strong>5 categorias ativas</strong>
+            <strong>{cuisines.length} categorias ativas</strong>
             <i aria-hidden="true" />
           </div>
           <div className="cuisine-list">
-            {cuisines.slice(0, 5).map((item) => (
+            {cuisines.map((item) => (
               <span key={item}>
                 <small>curado</small>
                 {item}
               </span>
             ))}
           </div>
+          <div className="food-company-list">
+            {restaurants.map((restaurant) => (
+              <Link className="food-company-card" href={restaurant.detailHref} key={restaurant.name}>
+                <div
+                  className="company-logo-mark"
+                  style={restaurant.logoImage ? { backgroundImage: `url(${restaurant.logoImage})` } : undefined}
+                >
+                  {!restaurant.logoImage && restaurant.logo}
+                </div>
+                <div>
+                  <span>{restaurant.subtitle}</span>
+                  <strong>{restaurant.name}</strong>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
+      </div>
+    </section>
+  );
+}
+
+export function PlacesAndMarketplaceSection() {
+  return (
+    <section className="section places-marketplace-section" id="comprar">
+      <div className="container places-marketplace-grid">
+        <article className="content-block tourism-directory-card">
+          <span className="section-number">03</span>
+          <span className="eyebrow">Onde ir</span>
+          <h2>Setores turísticos para navegar por interesse.</h2>
+          <p>
+            A página organiza parques, cultura, negócios e experiências regionais como portas de entrada
+            para listagens futuras.
+          </p>
+          <div className="cuisine-list light-list">
+            {sectors.map((item) => (
+              <span key={item}>
+                <small>setor</small>
+                {item}
+              </span>
+            ))}
+          </div>
+        </article>
+
+        <article className="content-block tourism-directory-card yellow-card">
+          <span className="section-number">04</span>
+          <span className="eyebrow">Onde comprar</span>
+          <h2>Marketplace para produtos, vouchers e experiências locais.</h2>
+          <p>
+            A área de compras fica preparada para associados divulgarem itens comerciais sem perder o tom
+            institucional do portal.
+          </p>
+          <div className="cuisine-list light-list">
+            {marketplaceCategories.map((item) => (
+              <span key={item}>
+                <small>mktplace</small>
+                {item}
+              </span>
+            ))}
+          </div>
+        </article>
       </div>
     </section>
   );
@@ -233,9 +335,9 @@ export function StaysEditorialSection() {
       <div className="container">
         <div className="section-header editorial-header">
           <div>
-            <span className="section-number">03</span>
+            <span className="section-number">05</span>
             <span className="eyebrow">Onde ficar</span>
-            <h2>Refúgios para acordar dentro da paisagem.</h2>
+            <h2>Hospedagens associadas com caminho para página de entidade.</h2>
           </div>
           <Link className="ghost-button" href="#">
             Ver todos <span aria-hidden="true">→</span>
@@ -243,17 +345,117 @@ export function StaysEditorialSection() {
         </div>
         <div className="section-system-bar">
           <span>Stay Index</span>
-          <strong>curadoria boutique</strong>
+          <strong>logo, nome e detalhe completo</strong>
           <i aria-hidden="true" />
         </div>
-        <div className="stay-editorial-grid">
+        <div className="stay-editorial-grid associated-stay-grid">
           {stays.slice(0, 3).map((stay, index) => (
-            <article className={`stay-visual-card stay-visual-${index + 1}`} key={stay}>
-              <span>{index === 1 ? "Boutique" : "Hospedagem"}</span>
-              <h3>{stay}</h3>
-              <small>{index === 1 ? "Vista + spa" : index === 2 ? "Chalé privativo" : "Check-in flexível"}</small>
-            </article>
+            <Link
+              className={`stay-visual-card stay-visual-${index + 1} associated-stay-card`}
+              href={stay.detailHref}
+              key={stay.name}
+              style={{ backgroundImage: `url(${imageOrFallback(stay.bannerImage)})` }}
+            >
+              <div
+                className="company-logo-mark"
+                style={stay.logoImage ? { backgroundImage: `url(${stay.logoImage})` } : undefined}
+              >
+                {!stay.logoImage && stay.logo}
+              </div>
+              <span>{stay.tagline}</span>
+              <h3>{stay.name}</h3>
+              <small>Ver informações da entidade</small>
+            </Link>
           ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function InstitutionalSection() {
+  return (
+    <section className="section institutional-section" id="institucional">
+      <div
+        className="container split-band institutional-band"
+        style={{ backgroundImage: `linear-gradient(135deg, rgba(0, 43, 114, 0.94), rgba(0, 43, 114, 0.78)), url(${institutionalBackgroundImage})` }}
+      >
+        <div>
+          <span className="eyebrow bright-eyebrow">Institucional</span>
+          <h2>Visite Cascavel Convention & Visitors Bureau</h2>
+          <p>
+            Uma vitrine comercial para fortalecer o turismo regional, conectar associados qualificados e
+            apresentar a cidade com linguagem moderna, confiável e pronta para campanhas.
+          </p>
+          <div className="institutional-metrics" aria-label="Indicadores institucionais">
+            <span>
+              <strong data-count-to="120" data-count-suffix="+">0+</strong>
+              associados
+            </span>
+            <span>
+              <strong data-count-to="50" data-count-suffix="+">0+</strong>
+              eventos
+            </span>
+            <span>
+              <strong data-count-to="10" data-count-suffix="+">0+</strong>
+              anos
+            </span>
+          </div>
+          <Link className="pill-button" href="#">
+            Nos conheça <span aria-hidden="true">→</span>
+          </Link>
+        </div>
+        <div className="logo-cloud">
+          {members.map((member) => (
+            <span
+              className="logo-tile"
+              key={member.name}
+              style={member.logoImage ? { backgroundImage: `url(${member.logoImage})` } : undefined}
+            >
+              {!member.logoImage && member.name}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function BlogSection() {
+  const [featuredPost, ...sidePosts] = posts;
+
+  return (
+    <section className="section editorial-blog" id="blog">
+      <div className="container">
+        <div className="section-header">
+          <div>
+            <span className="eyebrow">Últimas postagens</span>
+            <h2>Conteúdos recentes para inspirar visitantes e associados.</h2>
+          </div>
+          <Link className="ghost-button" href="/blog">
+            Ver mais <span aria-hidden="true">→</span>
+          </Link>
+        </div>
+        <div className="blog-layout">
+          <Link className="blog-feature" href="/blog">
+            <div className="blog-feature-image" style={{ backgroundImage: `linear-gradient(180deg, transparent, rgba(0, 43, 114, 0.42)), url(${imageOrFallback(featuredPost.image)})` }} />
+            <div className="blog-feature-content">
+              <h3>{featuredPost.title}</h3>
+              <p>{featuredPost.subtitle}</p>
+            </div>
+          </Link>
+          <div className="blog-stack">
+            {sidePosts.map((post) => (
+              <Link className="blog-row" href="/blog" key={post.title}>
+                <div className="blog-row-image" style={{ backgroundImage: `url(${imageOrFallback(post.image)})` }} />
+                <div>
+                  <span>POSTAGEM</span>
+                  <h3>{post.title}</h3>
+                  <p>{post.subtitle}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -265,15 +467,15 @@ export function FinalCtaSection() {
     <section className="section final-cta-section">
       <div className="container final-cta">
         <div className="cta-orbital-mark" aria-hidden="true">
-          <span>TA</span>
+          <span>VC</span>
         </div>
         <div>
-          <span className="eyebrow bright-eyebrow">Roteiro sem ruído</span>
-          <h2>Escolha a vibe. A serra organiza o resto.</h2>
+          <span className="eyebrow bright-eyebrow">Turismo sem ruído</span>
+          <h2>Um portal institucional com experiência de marketplace.</h2>
           <div className="cta-metrics">
-            <span><strong>48h</strong> roteiro</span>
-            <span><strong>04</strong> rotas</span>
-            <span><strong>1</strong> curadoria</span>
+            <span><strong>4</strong> categorias</span>
+            <span><strong>3</strong> eventos na home</span>
+            <span><strong>CVB</strong> identidade</span>
           </div>
         </div>
         <Link className="pill-button" href="/eventos">

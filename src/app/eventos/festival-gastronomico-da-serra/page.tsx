@@ -1,4 +1,13 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+import { events, imageOrFallback } from "../../data";
+
+const event = events[0];
+
+export const metadata: Metadata = {
+  title: event.title,
+  description: event.subtitle
+};
 
 export default function EventDetailPage() {
   return (
@@ -8,11 +17,11 @@ export default function EventDetailPage() {
           <div className="event-hero-copy">
             <span className="eyebrow bright-eyebrow">
               <span className="dot" />
-              14 jun - Centro histórico
+              14 jun - Centro de Cascavel
             </span>
-            <h1>Festival Gastronômico da Serra</h1>
+            <h1>Festival Gastronômico de Cascavel</h1>
             <p className="lead">
-              Uma noite para provar receitas autorais, conhecer produtores locais e viver a região
+              Uma noite para provar receitas autorais, conhecer produtores locais e viver a cidade
               por meio da mesa, da música e dos encontros.
             </p>
             <div className="event-highlights">
@@ -20,7 +29,11 @@ export default function EventDetailPage() {
                 <span key={item}>{item}</span>
               ))}
             </div>
-            <div className="detail-cover premium-cover" aria-label="Festival gastronômico">
+            <div
+              className="detail-cover premium-cover"
+              aria-label="Festival gastronômico"
+              style={{ backgroundImage: `linear-gradient(180deg, transparent, rgba(0, 43, 114, 0.5)), url(${imageOrFallback(event.image)})` }}
+            >
               <div className="cover-caption">
                 <span>Experiência destaque</span>
                 <strong>Noite de sabores, música e produtores locais</strong>
@@ -36,7 +49,7 @@ export default function EventDetailPage() {
               <strong>R$ 89</strong>
             </div>
             <p className="card-meta">
-              Lotes limitados com degustação, show ao vivo e acesso à feira de produtores.
+              Lotes limitados com degustação, show ao vivo e acesso à feira de produtores associados.
             </p>
             <Link className="pill-button" href="#">
               Comprar ingressos
@@ -73,15 +86,13 @@ export default function EventDetailPage() {
               <div
                 className="media-tile"
                 style={{
-                  backgroundImage:
-                    "url(https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=85)"
+                  backgroundImage: `url(${imageOrFallback(event.photos[0])})`
                 }}
               />
               <div
                 className="media-tile"
                 style={{
-                  backgroundImage:
-                    "url(https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=900&q=85)"
+                  backgroundImage: `url(${imageOrFallback(event.photos[1])})`
                 }}
               />
             </div>
@@ -92,12 +103,12 @@ export default function EventDetailPage() {
             <p>
               <strong>Endereço:</strong>
               <br />
-              Praça Central, Centro Histórico
+              Centro de Eventos, Cascavel - PR
             </p>
             <p>
               <strong>Contato:</strong>
               <br />
-              contato@terrasaltas.tur.br
+              contato@visitecascavel.com.br
               <br />
               (00) 90000-0000
             </p>
@@ -126,8 +137,8 @@ export default function EventDetailPage() {
             <span className="eyebrow">Últimos lotes</span>
             <h2>Não deixe o evento mais desejado da temporada passar.</h2>
             <p>
-              O CTA fica evidente, repetido no momento certo e conectado à proposta comercial da
-              página: transformar interesse em ingresso.
+              O CTA fica evidente quando houver link de ingresso, conectado à proposta comercial da
+              página e preparado para transformar interesse em compra.
             </p>
           </div>
           <Link className="pill-button" href="#">
