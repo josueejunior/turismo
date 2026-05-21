@@ -7757,3 +7757,170 @@ body.hero-is-scrolled .scroll-indicator {
     width: 100%;
   }
 }
+
+/* Food section cleanup: remove legacy card conflicts */
+.taste-editorial {
+  padding: 104px 0;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(245, 196, 0, 0.18), transparent 26rem),
+    radial-gradient(circle at 86% 18%, rgba(26, 58, 143, 0.5), transparent 30rem),
+    #060f35;
+}
+
+.taste-editorial .taste-editorial-grid {
+  align-items: center;
+}
+
+.taste-editorial .taste-editorial-image {
+  min-height: 520px;
+  border-radius: 18px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+}
+
+.taste-editorial .taste-editorial-copy h2 {
+  max-width: 680px;
+  color: #ffffff;
+  font-size: clamp(30px, 4vw, 44px);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
+.taste-editorial .taste-editorial-copy p {
+  max-width: 620px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.taste-editorial .eyebrow {
+  border-color: rgba(245, 196, 0, 0.28);
+  background: rgba(255, 255, 255, 0.08);
+  color: #f5c400;
+}
+
+.taste-editorial .section-system-bar {
+  border: 1px solid rgba(245, 196, 0, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  box-shadow: none;
+}
+
+.taste-editorial .section-system-bar span,
+.taste-editorial .section-system-bar strong {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.taste-editorial .section-system-bar span,
+.taste-editorial .section-system-bar i {
+  color: #f5c400;
+}
+
+.taste-editorial .cuisine-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.taste-editorial .cuisine-list span {
+  min-height: 56px;
+  border: 1px solid rgba(245, 196, 0, 0.24);
+  border-radius: 999px;
+  padding: 12px 18px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  box-shadow: none;
+}
+
+.taste-editorial .cuisine-list span:hover {
+  border-color: #f5c400;
+  background: rgba(245, 196, 0, 0.14);
+}
+
+.taste-editorial .cuisine-list small {
+  color: #f5c400;
+}
+
+.taste-editorial .food-company-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.taste-editorial .food-company-card {
+  display: grid;
+  width: 100%;
+  min-height: 180px;
+  height: 180px;
+  grid-template-columns: 1fr;
+  align-content: center;
+  justify-items: center;
+  border: 1px solid rgba(245, 196, 0, 0.18);
+  border-radius: 12px;
+  padding: 22px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.05)),
+    rgba(10, 31, 110, 0.7);
+  box-shadow: 0 4px 20px rgba(6, 15, 53, 0.1);
+  color: #ffffff;
+  text-align: center;
+  backdrop-filter: blur(14px);
+}
+
+.taste-editorial .food-company-card::before {
+  display: none;
+}
+
+.taste-editorial .food-company-card:hover {
+  border-color: #f5c400;
+  background:
+    linear-gradient(180deg, rgba(245, 196, 0, 0.12), rgba(255, 255, 255, 0.05)),
+    rgba(10, 31, 110, 0.82);
+  box-shadow: 0 8px 40px rgba(6, 15, 53, 0.26);
+  transform: translateY(-5px) scale(1.03);
+}
+
+.taste-editorial .food-company-card .company-logo-mark {
+  display: grid;
+  width: 62px;
+  height: 62px;
+  place-items: center;
+  margin: 0 0 14px;
+  border: 0;
+  border-radius: 16px;
+  background: #f5c400;
+  color: #060f35;
+  font-size: 0.8rem;
+  font-weight: 800;
+  box-shadow: 0 12px 28px rgba(245, 196, 0, 0.24);
+}
+
+.taste-editorial .food-company-card span {
+  display: none;
+}
+
+.taste-editorial .food-company-card strong {
+  display: block;
+  max-width: 210px;
+  color: #ffffff !important;
+  font-family: var(--font-inter), Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.places-marketplace-section .tourism-directory-card h2,
+.places-marketplace-section .tourism-directory-card p {
+  color: #060f35;
+}
+
+@media (max-width: 900px) {
+  .taste-editorial .taste-editorial-grid,
+  .taste-editorial .food-company-list,
+  .taste-editorial .cuisine-list {
+    grid-template-columns: 1fr;
+  }
+
+  .taste-editorial .taste-editorial-image {
+    min-height: 320px;
+  }
+}
