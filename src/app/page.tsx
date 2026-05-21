@@ -11,69 +11,69 @@ export default function Home() {
           <div className="hero-copy">
             <span className="eyebrow bright-eyebrow">
               <span className="dot" />
-              Temporada aberta nas Terras Altas
+              Guia curado das Terras Altas
             </span>
-            <h1>Viva a cidade como um grande festival.</h1>
+            <h1>A serra em forma de roteiro.</h1>
             <p className="lead">
-              Eventos, sabores, rotas e hospedagens em uma vitrine vibrante para turistas que
-              querem comprar, reservar e montar a viagem sem perder tempo.
+              Uma vitrine de eventos, mesas, pousadas e paisagens para quem quer chegar com o
+              fim de semana praticamente desenhado.
             </p>
             <div className="hero-actions">
               <Link className="pill-button" href="/eventos">
-                Planejar minha viagem
+                Ver agenda curada
               </Link>
               <Link className="ghost-button light-ghost" href="/eventos/festival-gastronomico-da-serra">
-                Ver festival destaque
+                Festival em destaque
               </Link>
             </div>
             <div className="hero-search-card">
               <div>
-                <span>Quando?</span>
-                <strong>Este fim de semana</strong>
+                <span>Chegada</span>
+                <strong>Sexta ao pôr do sol</strong>
               </div>
               <div>
-                <span>Interesse</span>
-                <strong>Gastronomia + música</strong>
+                <span>Sábado</span>
+                <strong>Feira, trilha leve e jantar</strong>
               </div>
               <div>
-                <span>Estilo</span>
-                <strong>Experiências premium</strong>
+                <span>Domingo</span>
+                <strong>Café colonial e mirante</strong>
               </div>
               <Link className="dark-button" href="/eventos">
-                Buscar
+                Montar roteiro
               </Link>
             </div>
             <div className="stats hero-stats">
               <div className="stat">
                 <strong>48h</strong>
-                <span className="small-copy">roteiros para viagens rápidas</span>
+                <span className="small-copy">roteiros enxutos para chegar e aproveitar</span>
               </div>
               <div className="stat">
                 <strong>120+</strong>
-                <span className="small-copy">empresas e experiências associadas</span>
+                <span className="small-copy">negócios locais reunidos em uma vitrine</span>
               </div>
               <div className="stat">
-                <strong>3</strong>
-                <span className="small-copy">cliques até comprar ou reservar</span>
+                <strong>1</strong>
+                <span className="small-copy">agenda clara para eventos, sabores e estadia</span>
               </div>
             </div>
           </div>
           <div className="scenic-showcase" aria-label="Paisagem turística regional">
             <div className="showcase-card main-photo">
               <div className="photo-label">
-                <span>Festival da Serra</span>
-                <strong>14 jun - ingressos abertos</strong>
+                <span>Fim de semana destaque</span>
+                <strong>festival, produtores e noite no centro histórico</strong>
               </div>
             </div>
             <div className="showcase-card floating-photo photo-two">
-              <span>Rota das Cachoeiras</span>
+              <span>trilha guiada</span>
             </div>
             <div className="showcase-card floating-photo photo-three">
-              <span>Jantar autoral</span>
+              <span>mesa regional</span>
             </div>
             <div className="weather-badge">
-              <strong>27°C</strong>
-              <span>dia perfeito para explorar</span>
+              <strong>Serra</strong>
+              <span>agenda, mesa e hospedagem no mesmo lugar</span>
             </div>
             <div className="event-ticket-mini">
               <span className="date-badge">Destaque</span>
@@ -89,7 +89,7 @@ export default function Home() {
 
       <section className="trust-strip">
         <div className="container trust-grid">
-          {["Eventos com curadoria", "Compra de ingressos", "Roteiros de 48h", "Parceiros locais"].map(
+          {["Agenda com curadoria", "Experiências verificadas", "Roteiros de 48h", "Comércio local"].map(
             (item) => (
               <span key={item}>{item}</span>
             )
@@ -102,11 +102,11 @@ export default function Home() {
           <div className="section-header">
             <div>
               <span className="eyebrow">O que fazer</span>
-              <h2>Eventos selecionados para viver a cidade agora.</h2>
+              <h2>Uma agenda curta, escolhida para virar plano.</h2>
             </div>
             <p>
-              Categorias rápidas, cards com imagem quadrada, data evidente e um caminho simples até
-              a página do evento.
+              Datas, lugares e experiências com contexto suficiente para decidir sem garimpar em
+              várias páginas.
             </p>
           </div>
           <div className="category-row">
@@ -144,7 +144,7 @@ export default function Home() {
               <span className="eyebrow">Onde comer</span>
               <h2>Da mesa afetiva à experiência autoral.</h2>
             </div>
-            <p>Lista de culinárias pensada para navegação rápida e descoberta por intenção.</p>
+            <p>Um recorte de sabores locais para montar o dia em torno da mesa certa.</p>
           </div>
           <div className="category-row">
             {cuisines.map((item) => (
@@ -175,7 +175,7 @@ export default function Home() {
           <div className="section-header">
             <div>
               <span className="eyebrow">Onde ficar</span>
-              <h2>Hospedagens com assinatura local.</h2>
+              <h2>Pousadas e refúgios para dormir dentro do clima da viagem.</h2>
             </div>
             <Link className="ghost-button" href="#">
               Ver todos
@@ -200,20 +200,25 @@ export default function Home() {
         <div className="container split-band signature-band">
           <div>
             <span className="eyebrow">Institucional</span>
-            <h2 className="display">Uma vitrine viva para a economia do turismo.</h2>
+            <h2 className="display">Um guia comercial com olhar de revista.</h2>
             <p>
-              Conectamos visitantes a empresas, produtores e experiências que fortalecem a região,
-              com curadoria visual, informação clara e presença comercial de alto padrão.
+              O projeto organiza a oferta turística da região com curadoria visual, informação
+              prática e espaço comercial para quem recebe bem.
             </p>
             <Link className="pill-button" href="#">
               Nos conheça
             </Link>
           </div>
-          <div className="logo-cloud" aria-label="Associados participantes">
-            {["Aurora", "Vale", "Mirante", "Raízes", "Serra", "Estação"].map((logo) => (
-              <span className="logo-tile" key={logo}>
-                {logo}
-              </span>
+          <div className="editorial-proof" aria-label="Como a vitrine organiza o turismo local">
+            {[
+              ["Agenda", "Eventos com data, local e caminho claro até a compra."],
+              ["Vitrine", "Negócios locais apresentados com foto, contato e contexto."],
+              ["Roteiros", "Combinações de comida, natureza e hospedagem para 48h."]
+            ].map(([title, copy]) => (
+              <article className="proof-tile" key={title}>
+                <span>{title}</span>
+                <p>{copy}</p>
+              </article>
             ))}
           </div>
         </div>
@@ -232,16 +237,16 @@ export default function Home() {
           </div>
           <div className="journey-content">
             <span className="eyebrow bright-eyebrow">Como funciona</span>
-            <h2>Do desejo ao ingresso, com ritmo de viagem.</h2>
+            <h2>Do desejo de viajar ao roteiro possível.</h2>
             <p>
-              Em vez de uma sequência genérica, a navegação parece um roteiro: o turista descobre,
-              combina experiências e chega no CTA certo com confiança.
+              A navegação acompanha o jeito real de planejar uma escapada: primeiro o clima, depois
+              as combinações, por fim o contato ou ingresso.
             </p>
             <div className="journey-steps">
               {[
-                ["01", "Descubra o clima da viagem", "Eventos, gastronomia e lugares aparecem como uma curadoria visual."],
-                ["02", "Combine o roteiro ideal", "Categorias, datas e hospedagens ajudam a transformar interesse em plano."],
-                ["03", "Reserve sem fricção", "Links oficiais, contatos e ingressos ficam evidentes no momento da decisão."]
+                ["01", "Escolha o motivo da viagem", "Festival, trilha, mesa regional ou descanso aparecem com imagem e data."],
+                ["02", "Complete o fim de semana", "O guia aproxima eventos, restaurantes e hospedagens que combinam entre si."],
+                ["03", "Vá direto ao contato certo", "Ingressos, links oficiais e informações práticas ficam no ponto de decisão."]
               ].map(([number, title, copy]) => (
                 <article className="journey-card" key={number}>
                   <span>{number}</span>
@@ -261,7 +266,7 @@ export default function Home() {
           <div className="section-header">
             <div>
               <span className="eyebrow">Blog</span>
-              <h2>Guias que fazem o turista querer ficar mais um dia.</h2>
+              <h2>Guias para esticar a visita sem improviso.</h2>
             </div>
             <Link className="ghost-button" href="#">
               Ver mais
@@ -310,7 +315,7 @@ export default function Home() {
         <div className="container final-cta">
           <div>
             <span className="eyebrow bright-eyebrow">Pronto para explorar?</span>
-            <h2>Transforme a próxima visita em uma experiência completa.</h2>
+            <h2>Escolha uma data e deixe a serra conduzir o resto.</h2>
           </div>
           <Link className="pill-button" href="/eventos">
             Ver agenda de eventos
