@@ -264,9 +264,12 @@ export function FinalCtaSection() {
   return (
     <section className="section final-cta-section">
       <div className="container final-cta">
+        <div className="cta-orbital-mark" aria-hidden="true">
+          <span>TA</span>
+        </div>
         <div>
-          <span className="eyebrow bright-eyebrow">Pronto para explorar?</span>
-          <h2>Monte uma viagem bonita sem abrir vinte abas.</h2>
+          <span className="eyebrow bright-eyebrow">Roteiro sem ruído</span>
+          <h2>Escolha a vibe. A serra organiza o resto.</h2>
           <div className="cta-metrics">
             <span><strong>48h</strong> roteiro</span>
             <span><strong>04</strong> rotas</span>
@@ -274,7 +277,7 @@ export function FinalCtaSection() {
           </div>
         </div>
         <Link className="pill-button" href="/eventos">
-          Ver agenda de eventos <span aria-hidden="true">→</span>
+          Abrir agenda <span aria-hidden="true">→</span>
         </Link>
       </div>
     </section>

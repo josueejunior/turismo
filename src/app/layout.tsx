@@ -72,28 +72,36 @@ export default function RootLayout({
               <div className="footer-brand">
                 <Link className="brand" href="/">
                   <span className="brand-mark">TA</span>
-                  <span>Terras Altas</span>
+                  <span>
+                    Terras Altas
+                    <small>Turismo curado</small>
+                  </span>
                 </Link>
                 <p>
-                  Marketplace turístico para descobrir eventos, sabores, hospedagens e experiências
-                  regionais com curadoria.
+                  Uma camada inteligente para escolher eventos, sabores e refúgios sem navegar no escuro.
                 </p>
+                <div className="footer-status">
+                  <span>Live region</span>
+                  <strong>Serra ativa</strong>
+                  <i aria-hidden="true" />
+                </div>
               </div>
-              <div>
+              <div className="footer-links-panel">
                 <h3>Explorar</h3>
                 <Link href="/eventos">Eventos</Link>
                 <Link href="/#setores">Gastronomia</Link>
                 <Link href="/#marketplace">Hospedagens</Link>
               </div>
-              <div>
+              <div className="footer-links-panel">
                 <h3>Institucional</h3>
                 <Link href="#">Associados</Link>
                 <Link href="#">Sobre o projeto</Link>
                 <Link href="#">Contato comercial</Link>
               </div>
               <div className="footer-newsletter">
-                <h3>Receba a agenda</h3>
-                <p>Novos eventos, roteiros e experiências selecionadas.</p>
+                <span className="footer-kicker">Agenda selecionada</span>
+                <h3>Receba o melhor fim de semana.</h3>
+                <p>Eventos, mesas e hospedagens escolhidos como uma curadoria, não como uma lista.</p>
                 <div className="mini-form">
                   <span>email@exemplo.com</span>
                   <strong>Entrar</strong>
@@ -101,8 +109,8 @@ export default function RootLayout({
               </div>
             </div>
             <div className="container footer-bottom">
-              <span>Terras Altas Turismo - conceito visual para marketplace regional.</span>
-              <span>UX/UI premium para turismo e eventos.</span>
+              <span>Terras Altas Turismo - curadoria regional inteligente.</span>
+              <span>Experiência premium para turismo, eventos e rotas locais.</span>
             </div>
           </footer>
         </div>
