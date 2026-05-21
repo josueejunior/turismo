@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Manrope, Playfair_Display } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
 
-const inter = Inter({
+const manrope = Manrope({
   subsets: ["latin"],
-  variable: "--font-inter"
+  variable: "--font-manrope"
 });
 
 const playfair = Playfair_Display({
@@ -25,23 +25,45 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${inter.variable} ${playfair.variable}`}>
+      <body className={`${manrope.variable} ${playfair.variable}`}>
         <div className="page-shell">
           <header className="nav">
             <div className="container nav-inner">
+              <input className="nav-menu-toggle" id="nav-menu-toggle" type="checkbox" />
               <Link className="brand" href="/">
                 <span className="brand-mark">TA</span>
-                <span>Terras Altas</span>
+                <span className="brand-copy">
+                  <strong>Terras Altas</strong>
+                  <small>Turismo curado</small>
+                </span>
               </Link>
               <nav className="nav-links" aria-label="Menu principal">
                 <Link href="/eventos">O que fazer</Link>
                 <Link href="/#setores">Onde ir</Link>
-                <Link href="/#marketplace">Onde comprar</Link>
-                <Link href="/#blog">Blog</Link>
+                <Link href="/#marketplace">Onde ficar</Link>
               </nav>
-              <Link className="pill-button" href="/eventos">
+              <Link className="nav-cta" href="/eventos">
                 Explorar
               </Link>
+              <label className="nav-menu-button" htmlFor="nav-menu-toggle" aria-label="Abrir menu">
+                <span />
+                <span />
+              </label>
+              <label className="nav-menu-backdrop" htmlFor="nav-menu-toggle" aria-hidden="true" />
+              <aside className="nav-drawer" aria-label="Menu mobile">
+                <div className="drawer-head">
+                  <span>Menu</span>
+                  <label htmlFor="nav-menu-toggle" aria-label="Fechar menu">
+                    Fechar
+                  </label>
+                </div>
+                <Link href="/eventos">O que fazer</Link>
+                <Link href="/#setores">Onde ir</Link>
+                <Link href="/#marketplace">Onde ficar</Link>
+                <Link className="drawer-cta" href="/eventos">
+                  Explorar agenda
+                </Link>
+              </aside>
             </div>
           </header>
           {children}
