@@ -74,34 +74,53 @@
 }
 
 /* ----- Section number — elegant Playfair display digit -------- */
+.section-number,
 .section .section-number,
 .section-header .section-number,
 .taste-editorial-copy .section-number,
-.tourism-directory-card .section-number {
-  display: block;
-  width: auto;
-  min-height: 0;
-  padding: 0;
-  margin: 0 0 8px;
-  border: none;
-  border-radius: 0;
-  background: transparent;
-  font-family: var(--font-playfair), Georgia, serif;
-  font-size: clamp(40px, 5vw, 64px);
-  font-weight: 700;
-  line-height: 0.85;
-  letter-spacing: -0.04em;
-  color: var(--cv-gold);
-  opacity: 0.85;
+.tourism-directory-card .section-number,
+.events-editorial .section-number,
+.stays-editorial .section-number,
+.editorial-blog .section-number {
+  display: block !important;
+  width: auto !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 0 10px !important;
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  font-family: var(--font-playfair), Georgia, serif !important;
+  font-size: clamp(38px, 4.6vw, 58px) !important;
+  font-weight: 700 !important;
+  line-height: 0.88 !important;
+  letter-spacing: -0.04em !important;
+  color: var(--cv-gold) !important;
+  opacity: 0.78 !important;
+}
+
+.yellow-card .section-number,
+.events-editorial .section-number,
+.stays-editorial .section-number,
+.taste-editorial .section-number,
+.editorial-blog .section-number {
+  color: var(--cv-gold) !important;
+}
+
+.yellow-card .section-number {
+  color: rgba(6, 15, 53, 0.32) !important;
 }
 
 /* Kill the legacy prepended labels like "Gastronomia ", "Eventos ", etc. */
+.section-number::before,
 .events-editorial .section-number::before,
 .taste-editorial .section-number::before,
 .tourism-directory-card .section-number::before,
 .stays-editorial .section-number::before,
 .editorial-blog .section-number::before {
   content: none !important;
+  display: none !important;
 }
 
 /* Visual hierarchy: section-number stacks ABOVE the eyebrow pill */
@@ -604,83 +623,171 @@ button:focus-visible {
   line-height: 1.2;
 }
 
-/* ----- Cuisine pill list ------------------------------------ */
+/* ----- Cuisine / sector / marketplace pill list -------------- */
 .cuisine-list {
-  display: flex;
+  display: flex !important;
   flex-wrap: wrap;
-  gap: 8px;
-  margin: 18px 0 28px;
+  gap: 10px;
+  margin: 22px 0 28px;
+  grid-template-columns: none !important;
 }
 
 .cuisine-list > span {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 14px;
+  height: auto !important;
+  min-height: 0 !important;
+  padding: 9px 16px;
   border-radius: 999px;
-  border: 1px solid rgba(245, 196, 0, 0.4);
-  background: rgba(245, 196, 0, 0.08);
+  border: 1px solid rgba(245, 196, 0, 0.42);
+  background: rgba(245, 196, 0, 0.1);
   color: var(--cv-gold);
   font-family: var(--font-inter), Inter, sans-serif;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
+  box-shadow: none !important;
+  transition: background 0.25s var(--ease-out), border-color 0.25s var(--ease-out);
+}
+
+.cuisine-list > span:hover {
+  background: var(--cv-gold);
+  color: var(--cv-ink);
+  border-color: var(--cv-gold);
 }
 
 .cuisine-list.light-list > span {
   border-color: rgba(6, 15, 53, 0.14);
-  background: rgba(245, 196, 0, 0.1);
+  background: rgba(255, 255, 255, 0.7);
   color: var(--cv-ink);
 }
 
-.cuisine-list > span > small {
-  font-size: 9px;
-  letter-spacing: 0.24em;
-  color: rgba(245, 196, 0, 0.55);
-  text-transform: uppercase;
+.cuisine-list.light-list > span:hover {
+  background: var(--cv-gold);
+  border-color: var(--cv-gold);
 }
 
-.cuisine-list.light-list > span > small {
-  color: rgba(6, 15, 53, 0.4);
+/* Hide the noisy small label ("setor", "mktplace", "curado") inside chips */
+.cuisine-list > span > small,
+.places-marketplace-section .cuisine-list > span > small,
+.tourism-directory-card .cuisine-list > span > small {
+  display: none !important;
 }
 
 /* ----- Places & Marketplace tourism directory cards --------- */
+.places-marketplace-section {
+  position: relative;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(245, 196, 0, 0.06), transparent 26rem),
+    var(--cv-cream);
+}
+
 .places-marketplace-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  gap: clamp(20px, 3vw, 32px);
 }
 
 .tourism-directory-card {
-  padding: clamp(28px, 4vw, 48px);
+  position: relative;
+  padding: clamp(32px, 4.5vw, 56px) clamp(28px, 4vw, 44px);
   border-radius: 12px;
   border: 1px solid rgba(6, 15, 53, 0.08);
   background: var(--cv-paper);
-  box-shadow: 0 4px 20px rgba(6, 15, 53, 0.06);
+  box-shadow: 0 4px 20px rgba(6, 15, 53, 0.07);
   transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
+  overflow: hidden;
+}
+
+.tourism-directory-card::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 18px;
+  height: 18px;
+  border-top: 1px solid var(--cv-gold);
+  border-right: 1px solid var(--cv-gold);
+  opacity: 0.6;
+  transition: opacity 0.3s var(--ease-out);
+}
+
+.tourism-directory-card::after {
+  content: "";
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 18px;
+  height: 18px;
+  border-bottom: 1px solid var(--cv-gold);
+  border-left: 1px solid var(--cv-gold);
+  opacity: 0.6;
+  transition: opacity 0.3s var(--ease-out);
 }
 
 .tourism-directory-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 50px rgba(6, 15, 53, 0.12);
+  box-shadow: 0 20px 50px rgba(6, 15, 53, 0.14);
 }
 
-.tourism-directory-card.yellow-card {
-  background: var(--cv-gold);
+.tourism-directory-card:hover::before,
+.tourism-directory-card:hover::after {
+  opacity: 1;
+}
+
+.tourism-directory-card h2 {
+  margin-top: 8px;
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: clamp(26px, 3vw, 38px) !important;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
   color: var(--cv-ink);
 }
 
+.tourism-directory-card p {
+  max-width: 460px;
+  margin-top: 16px;
+  font-size: 15px;
+  line-height: 1.62;
+  color: rgba(6, 15, 53, 0.65);
+}
+
+.tourism-directory-card.yellow-card {
+  background:
+    radial-gradient(circle at 100% 0%, rgba(255, 255, 255, 0.32), transparent 16rem),
+    linear-gradient(135deg, #f5c400, #ffd83a);
+  color: var(--cv-ink);
+  border-color: rgba(6, 15, 53, 0.14);
+}
+
 .tourism-directory-card.yellow-card h2,
-.tourism-directory-card.yellow-card .eyebrow,
-.tourism-directory-card.yellow-card .section-number {
+.tourism-directory-card.yellow-card p,
+.tourism-directory-card.yellow-card .eyebrow {
+  color: var(--cv-ink);
+}
+
+.tourism-directory-card.yellow-card::before,
+.tourism-directory-card.yellow-card::after {
+  border-color: rgba(6, 15, 53, 0.45);
+}
+
+.tourism-directory-card.yellow-card .eyebrow {
+  border-color: rgba(6, 15, 53, 0.22);
+  background: rgba(6, 15, 53, 0.08);
   color: var(--cv-ink);
 }
 
 .tourism-directory-card.yellow-card .cuisine-list > span {
-  border-color: rgba(6, 15, 53, 0.18);
-  background: rgba(6, 15, 53, 0.06);
+  border-color: rgba(6, 15, 53, 0.22);
+  background: rgba(255, 255, 255, 0.34);
   color: var(--cv-ink);
+}
+
+.tourism-directory-card.yellow-card .cuisine-list > span:hover {
+  background: var(--cv-ink);
+  color: var(--cv-gold);
+  border-color: var(--cv-ink);
 }
 
 /* ----- Stays editorial cards refinement --------------------- */
