@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { imageOrFallback, posts } from "../data";
 
 export const metadata: Metadata = {
@@ -35,7 +36,7 @@ export default function BlogPage() {
           </div>
           <div className="blog-layout">
             {posts.map((post) => (
-              <article className="blog-feature" key={post.title}>
+              <Link className="blog-feature" href={`/blog/${post.slug}`} key={post.title}>
                 <Image
                   className="blog-feature-image"
                   src={imageOrFallback(post.image)}
@@ -48,7 +49,7 @@ export default function BlogPage() {
                   <h3>{post.title}</h3>
                   <p>{post.subtitle}</p>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         </div>

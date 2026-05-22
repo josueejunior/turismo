@@ -360,7 +360,7 @@ export function BlogSection() {
         </div>
         <div className="blog-layout">
           {posts.map((post) => (
-            <Link className="blog-feature" href="/blog" key={post.title}>
+            <Link className="blog-feature" href={`/blog/${post.slug}`} key={post.title}>
               <Image
                 className="blog-feature-image"
                 src={imageOrFallback(post.image)}

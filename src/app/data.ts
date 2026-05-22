@@ -223,21 +223,45 @@ export const members = [
 
 export const posts = [
   {
+    slug: "fim-de-semana-em-cascavel",
     title: "Como viver um fim de semana em Cascavel",
     subtitle: "Roteiro compacto para comer bem, circular pela cidade e descobrir experiências locais.",
     image:
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=85"
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=85",
+    category: "Roteiro",
+    readTime: "4 min",
+    content: [
+      "Cascavel funciona muito bem para uma viagem curta quando o roteiro combina gastronomia, parques urbanos e experiências regionais em deslocamentos simples.",
+      "A sugestão é começar pelo centro gastronômico, reservar uma tarde para áreas verdes e finalizar com uma programação cultural ou evento local. Essa combinação cria uma experiência compacta, mas com cara de destino completo.",
+      "Para visitantes corporativos, o mesmo roteiro pode ser adaptado para horários livres entre compromissos, valorizando associados e negócios locais."
+    ]
   },
   {
+    slug: "sabores-do-turismo-regional",
     title: "Sabores que movimentam o turismo regional",
     subtitle: "Conheça restaurantes, produtores e casas que dão identidade ao destino.",
     image:
-      "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=900&q=85"
+      "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=900&q=85",
+    category: "Gastronomia",
+    readTime: "3 min",
+    content: [
+      "A gastronomia regional é uma das formas mais diretas de apresentar a cidade para visitantes. Restaurantes, cafés, bares e produtores contam histórias que ajudam a diferenciar o destino.",
+      "Quando essas empresas aparecem com imagem, descrição e caminho claro de contato, o portal deixa de ser apenas informativo e passa a gerar descoberta comercial.",
+      "A curadoria valoriza casas com identidade local, atendimento consistente e potencial para receber turistas, grupos e eventos."
+    ]
   },
   {
+    slug: "onde-hospedar-visitantes-e-equipes",
     title: "Onde hospedar visitantes e equipes",
     subtitle: "Do hotel executivo às estadias de lazer, veja opções para diferentes perfis.",
     image:
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=85"
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=85",
+    category: "Hospedagem",
+    readTime: "5 min",
+    content: [
+      "A hospedagem certa depende do perfil da viagem: executiva, lazer, eventos, grupos familiares ou delegações. Por isso, apresentar opções com clareza melhora a decisão do visitante.",
+      "Hotéis centrais tendem a atender melhor agendas rápidas e turismo de negócios, enquanto estadias com áreas de lazer ajudam famílias e grupos que permanecem mais tempo.",
+      "Uma página de entidade com fotos, contatos e diferenciais reduz dúvidas e facilita o encaminhamento para reserva."
+    ]
   }
 ];
