@@ -73,12 +73,53 @@
   color: var(--cv-gold);
 }
 
-.section-number {
+/* ----- Section number — elegant Playfair display digit -------- */
+.section .section-number,
+.section-header .section-number,
+.taste-editorial-copy .section-number,
+.tourism-directory-card .section-number {
+  display: block;
+  width: auto;
+  min-height: 0;
+  padding: 0;
+  margin: 0 0 8px;
+  border: none;
+  border-radius: 0;
+  background: transparent;
   font-family: var(--font-playfair), Georgia, serif;
-  font-size: 12px;
+  font-size: clamp(40px, 5vw, 64px);
   font-weight: 700;
-  letter-spacing: 0.2em;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
   color: var(--cv-gold);
+  opacity: 0.85;
+}
+
+/* Kill the legacy prepended labels like "Gastronomia ", "Eventos ", etc. */
+.events-editorial .section-number::before,
+.taste-editorial .section-number::before,
+.tourism-directory-card .section-number::before,
+.stays-editorial .section-number::before,
+.editorial-blog .section-number::before {
+  content: none !important;
+}
+
+/* Visual hierarchy: section-number stacks ABOVE the eyebrow pill */
+.section-header > div,
+.taste-editorial-copy,
+.tourism-directory-card,
+.events-editorial .section-header > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.section-header > div .eyebrow,
+.taste-editorial-copy .eyebrow,
+.tourism-directory-card .eyebrow,
+.events-editorial .section-header .eyebrow {
+  margin-bottom: 18px;
 }
 
 .section h2 {
@@ -447,123 +488,55 @@ button:focus-visible {
   color: rgba(255, 255, 255, 0.76);
 }
 
-/* ----- Editorial side-list cards on events ------------------- */
-.event-side-list .event-line {
-  display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: 18px;
-  align-items: center;
-  padding: 14px;
-  border: 1px solid rgba(6, 15, 53, 0.08);
-  border-radius: 12px;
-  background: var(--cv-paper);
-  box-shadow: 0 6px 18px rgba(6, 15, 53, 0.06);
-}
+/* Events cards intentionally left to the section legacy CSS in globals.css.
+   That spec already delivers the 280x280 grid the client signed off on. */
 
-.event-side-list .event-line-image {
-  border-radius: 8px;
-  aspect-ratio: 1 / 1;
-  background-size: cover;
-  background-position: center;
-}
-
-.event-side-list .event-line h3 {
-  font-family: var(--font-playfair), Georgia, serif;
-  font-size: 18px;
-  letter-spacing: -0.01em;
-  line-height: 1.18;
-  margin-top: 6px;
-  color: var(--cv-ink);
-}
-
-.event-side-list .event-line span {
-  font-family: var(--font-inter), Inter, sans-serif;
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--cv-gold);
-  font-weight: 600;
-}
-
-.event-side-list .event-line small {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  margin-top: 8px;
-  color: rgba(6, 15, 53, 0.55);
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-
-/* ----- Hero event portrait (main event card) ---------------- */
-.event-editorial-grid .event-portrait {
+/* ----- Taste editorial image: cinematic with Art Deco frame --- */
+.taste-editorial .taste-editorial-image {
   position: relative;
-  display: grid;
-  align-content: end;
+  min-height: 520px;
+  border-radius: 18px;
   overflow: hidden;
-  min-height: 480px;
-  padding: 28px;
-  border-radius: 12px;
-  color: #fff;
-  background-size: cover;
-  background-position: center;
+  background-color: #0a1f6e;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.36);
 }
 
-.event-editorial-grid .event-portrait .event-portrait-image {
+.taste-editorial .taste-editorial-image::after {
+  content: "";
   position: absolute;
-  inset: 0;
-  z-index: 0;
-  background-size: cover;
-  background-position: center;
-  transition: transform 0.8s var(--ease-out);
+  inset: 18px;
+  pointer-events: none;
+  border: 1px solid rgba(245, 196, 0, 0.45);
+  border-radius: 10px;
 }
 
-.event-editorial-grid .event-portrait::before {
+.taste-editorial .taste-editorial-image::before {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 1;
   background:
-    linear-gradient(180deg, transparent 30%, rgba(6, 15, 53, 0.55) 70%, rgba(6, 15, 53, 0.95) 100%);
+    linear-gradient(180deg, rgba(6, 15, 53, 0.05) 0%, rgba(6, 15, 53, 0.55) 100%),
+    linear-gradient(135deg, rgba(245, 196, 0, 0.12), transparent 50%);
+  z-index: 0;
 }
 
-.event-editorial-grid .event-portrait > div {
-  position: relative;
-  z-index: 2;
+.taste-editorial .taste-editorial-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
 }
 
-.event-editorial-grid .event-portrait:hover .event-portrait-image {
-  transform: scale(1.06);
-}
-
-.event-editorial-grid .event-portrait small {
-  display: inline-flex;
-  margin-bottom: 8px;
-  font-family: var(--font-inter), Inter, sans-serif;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  color: var(--cv-gold);
-}
-
-.event-editorial-grid .event-portrait span {
-  display: block;
-  margin-bottom: 6px;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.78);
-}
-
-.event-editorial-grid .event-portrait h3 {
-  font-family: var(--font-playfair), Georgia, serif;
-  font-size: clamp(22px, 2.4vw, 32px);
-  line-height: 1.06;
-  letter-spacing: -0.01em;
-  color: #fff;
+@media (max-width: 1024px) {
+  .taste-editorial .taste-editorial-grid {
+    grid-template-columns: 1fr;
+  }
+  .taste-editorial .taste-editorial-image {
+    min-height: 320px;
+  }
 }
 
 /* ----- Food/Restaurant cards refinement --------------------- */

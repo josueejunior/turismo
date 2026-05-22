@@ -169,26 +169,19 @@ export function EventsEditorialSection() {
           <i aria-hidden="true" />
         </div>
         <div className="event-editorial-grid">
-          <Link className="event-portrait" href={events[0].href}>
-            <div className="event-portrait-image" style={{ backgroundImage: `url(${imageOrFallback(events[0].image)})` }} />
-            <div>
-              <small>Evento principal</small>
-              <span>{events[0].date}</span>
-              <h3>{events[0].title}</h3>
-            </div>
-          </Link>
-          <div className="event-side-list">
-            {events.slice(1, 3).map((event) => (
-              <Link className="event-line" href={event.href} key={event.title}>
-                <div className="event-line-image" style={{ backgroundImage: `url(${imageOrFallback(event.image)})` }} />
-                <div>
-                  <span>{event.category} · {event.date}</span>
-                  <h3>{event.title}</h3>
-                  <small>Ver experiência</small>
-                </div>
-              </Link>
-            ))}
-          </div>
+          {events.slice(0, 3).map((event) => (
+            <Link className="event-portrait" href={event.href} key={event.title}>
+              <div
+                className="event-portrait-image"
+                style={{ backgroundImage: `url(${imageOrFallback(event.image)})` }}
+                aria-hidden="true"
+              />
+              <div>
+                <span>{event.category} · {event.date}</span>
+                <h3>{event.title}</h3>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </section>
@@ -196,10 +189,18 @@ export function EventsEditorialSection() {
 }
 
 export function TasteEditorialSection() {
+  const tasteCoverImage =
+    restaurants.find((restaurant) => restaurant.bannerImage)?.bannerImage ||
+    "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1400&q=88";
+
   return (
     <section className="section taste-editorial" id="setores">
       <div className="container taste-editorial-grid">
-        <div className="taste-editorial-image" />
+        <div
+          className="taste-editorial-image"
+          style={{ backgroundImage: `url(${tasteCoverImage})` }}
+          aria-hidden="true"
+        />
         <div className="taste-editorial-copy">
           <span className="section-number">02</span>
           <span className="eyebrow">Onde comer</span>
