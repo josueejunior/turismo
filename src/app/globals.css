@@ -9562,3 +9562,279 @@ footer.footer .footer-socials a:hover svg circle,
   }
 }
 
+/* Clean visual pass: fewer ornaments and calmer section backgrounds */
+.luxe-frame,
+.luxe-corner,
+.luxe-rail,
+.luxe-title-rule,
+.cta-orbital-mark {
+  display: none !important;
+}
+
+.events-editorial::before,
+.events-editorial::after,
+.taste-editorial::before,
+.taste-editorial::after,
+.places-marketplace-section::before,
+.places-marketplace-section::after,
+.stays-editorial::before,
+.stays-editorial::after,
+.editorial-blog::before,
+.editorial-blog::after,
+.final-cta-section::before,
+.final-cta-section::after,
+.institutional-band::before,
+.institutional-band::after,
+.final-cta::before,
+.final-cta::after,
+.section-header::before,
+.taste-editorial-copy::before,
+.tourism-directory-card::before {
+  display: none !important;
+  content: none !important;
+}
+
+.events-editorial,
+.places-marketplace-section,
+.stays-editorial,
+.editorial-blog {
+  background: #f8f9fc !important;
+}
+
+.events-editorial .editorial-shell,
+.places-marketplace-section .places-marketplace-grid,
+.stays-editorial > .container {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.tourism-directory-card,
+.associated-stay-card,
+.blog-feature {
+  background: #ffffff !important;
+}
+
+.taste-editorial {
+  background: #060f35 !important;
+}
+
+.taste-editorial .taste-editorial-grid {
+  background: rgba(255, 255, 255, 0.04) !important;
+  box-shadow: none !important;
+}
+
+.institutional-section {
+  background: #060f35 !important;
+}
+
+.institutional-band {
+  background:
+    linear-gradient(rgba(6, 15, 53, 0.78), rgba(6, 15, 53, 0.78)),
+    var(--institutional-bg, none) !important;
+  box-shadow: none !important;
+}
+
+.institutional-band .logo-cloud {
+  margin-inline: auto !important;
+}
+
+.final-cta-section {
+  background: #060f35 !important;
+}
+
+.final-cta {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  align-items: center !important;
+  max-width: 760px !important;
+  margin-inline: auto !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  box-shadow: none !important;
+}
+
+.luxe-hero-veil {
+  background:
+    linear-gradient(180deg, rgba(6, 15, 53, 0.6), rgba(6, 15, 53, 0.82)) !important;
+}
+
+.luxe-hero-grain {
+  opacity: 0.14 !important;
+}
+
+@media (max-width: 900px) {
+  .final-cta {
+    grid-template-columns: 1fr !important;
+    text-align: left !important;
+  }
+}
+
+/* Cleaner follow-up: avoid stacked gradients and center dense sections */
+.places-marketplace-section,
+.stays-editorial {
+  background: #f7f8fb !important;
+  background-image: none !important;
+}
+
+.places-marketplace-section {
+  padding-bottom: clamp(34px, 5vw, 62px) !important;
+}
+
+.stays-editorial {
+  padding-top: clamp(34px, 5vw, 62px) !important;
+}
+
+.places-marketplace-section .container,
+.places-marketplace-grid,
+.stays-editorial > .container {
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+.tourism-directory-card,
+.tourism-directory-card.yellow-card,
+.stays-editorial .associated-stay-card {
+  background: #ffffff !important;
+  background-image: none !important;
+  box-shadow: 0 18px 46px rgba(6, 15, 53, 0.07) !important;
+}
+
+.tourism-directory-card::before,
+.tourism-directory-card::after,
+.stays-editorial .associated-stay-card::before,
+.stays-editorial .associated-stay-card::after {
+  display: none !important;
+  content: none !important;
+}
+
+.institutional-section {
+  display: grid !important;
+  place-items: center !important;
+  background: #061744 !important;
+}
+
+.institutional-band {
+  width: min(100% - 48px, 1120px) !important;
+  margin-inline: auto !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: clamp(34px, 6vw, 84px) !important;
+  background:
+    linear-gradient(rgba(6, 15, 53, 0.82), rgba(6, 15, 53, 0.82)),
+    var(--institutional-bg, none) !important;
+  background-position: center !important;
+  background-size: cover !important;
+}
+
+.institutional-band > div:first-child {
+  justify-self: center !important;
+}
+
+.institutional-band .logo-cloud {
+  justify-self: center !important;
+  align-self: center !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  background-image: none !important;
+}
+
+.final-cta-section {
+  background: #061744 !important;
+  background-image: none !important;
+  padding-block: clamp(44px, 7vw, 82px) !important;
+}
+
+.final-cta {
+  width: min(100% - 48px, 760px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  background: rgba(255, 255, 255, 0.07) !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+.final-cta .cta-metrics span {
+  background: rgba(255, 255, 255, 0.08) !important;
+  background-image: none !important;
+}
+
+@media (max-width: 900px) {
+  .institutional-band {
+    width: min(100% - 28px, 680px) !important;
+    text-align: left !important;
+  }
+
+  .institutional-band .logo-cloud {
+    width: 100% !important;
+  }
+
+  .final-cta {
+    width: min(100% - 28px, 680px) !important;
+  }
+}
+
+/* Mobile navbar sanity: compact logo and remove the stray divider line */
+@media (max-width: 768px) {
+  .nav,
+  header.nav {
+    top: 0 !important;
+    padding-inline: 0 !important;
+  }
+
+  .nav-inner,
+  header.nav .nav-inner {
+    width: 100% !important;
+    min-height: 64px !important;
+    padding: 8px 14px !important;
+    border-radius: 0 !important;
+    border-inline: 0 !important;
+    background: rgba(6, 15, 53, 0.92) !important;
+  }
+
+  .nav-inner::after,
+  header.nav .nav-inner::after,
+  .nav-inner::before,
+  header.nav .nav-inner::before,
+  .nav .brand::before,
+  .nav .brand::after,
+  header.nav .brand::before,
+  header.nav .brand::after,
+  .nav-brand-logo::before,
+  .nav-brand-logo::after,
+  .nav .brand-logo::before,
+  .nav .brand-logo::after,
+  header.nav .brand-logo::before,
+  header.nav .brand-logo::after {
+    display: none !important;
+    content: none !important;
+  }
+
+  .nav .brand,
+  header.nav .brand {
+    max-width: calc(100% - 58px) !important;
+  }
+
+  .nav-brand-logo,
+  .nav .brand-logo,
+  header.nav .brand-logo {
+    width: 132px !important;
+    height: 48px !important;
+    max-height: 48px !important;
+    object-fit: contain !important;
+    object-position: left center !important;
+  }
+
+  .nav-menu-button,
+  header.nav .nav-menu-button {
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 12px !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .nav-brand-logo,
+  .nav .brand-logo,
+  header.nav .brand-logo {
+    width: 118px !important;
+  }
+}
+

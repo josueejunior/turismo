@@ -38,19 +38,6 @@ export function HomeHero() {
         <div className="luxe-hero-grain" />
       </div>
 
-      <div className="luxe-frame" aria-hidden="true">
-        <span className="luxe-corner luxe-corner-tl" />
-        <span className="luxe-corner luxe-corner-tr" />
-        <span className="luxe-corner luxe-corner-bl" />
-        <span className="luxe-corner luxe-corner-br" />
-      </div>
-
-      <aside className="luxe-rail" aria-hidden="true">
-        <span>Convention &amp; Visitors Bureau</span>
-        <i />
-        <strong>Cascavel · PR</strong>
-      </aside>
-
       <div className="container luxe-hero-content">
         <span className="luxe-overline">
           <i aria-hidden="true" />
@@ -61,7 +48,6 @@ export function HomeHero() {
         <h1 className="luxe-title">
           <span className="luxe-title-line">Descubra o melhor do</span>
           <em>turismo regional</em>
-          <span className="luxe-title-rule" aria-hidden="true" />
         </h1>
 
         <p className="luxe-lead">
@@ -385,9 +371,6 @@ export function FinalCtaSection() {
   return (
     <section className="section final-cta-section">
       <div className="container final-cta">
-        <div className="cta-orbital-mark" aria-hidden="true">
-          <span>VC</span>
-        </div>
         <div>
           <span className="eyebrow bright-eyebrow">Turismo sem ruído</span>
           <h2>Um portal institucional com experiência de marketplace.</h2>
