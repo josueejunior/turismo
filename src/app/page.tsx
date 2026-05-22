@@ -5,23 +5,15 @@ import {
   FinalCtaSection,
   HomeHero,
   InstitutionalSection,
-  ModernBentoSection,
   PlacesAndMarketplaceSection,
   StaysEditorialSection,
   TasteEditorialSection,
-  VisualIndexSection
 } from "@/features/home/sections";
 
 export default function Home() {
   return (
     <main>
       <HomeHero />
-      <MotionReveal>
-        <VisualIndexSection />
-      </MotionReveal>
-      <MotionReveal delay={0.05}>
-        <ModernBentoSection />
-      </MotionReveal>
       <MotionReveal delay={0.1}>
         <EventsEditorialSection />
       </MotionReveal>

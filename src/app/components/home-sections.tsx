@@ -41,8 +41,8 @@ export function HomeHero() {
             <strong>Convention & Visitors Bureau</strong>
             <i aria-hidden="true" />
           </div>
-          <span className="hero-edition">Turismo regional · marketplace institucional</span>
-          <span className="hero-route-code">HERO / CARROSSEL CONFIGURÁVEL / BANNER COMERCIAL</span>
+          <span className="hero-edition">Turismo regional · experiências selecionadas</span>
+          <span className="hero-route-code">Roteiros, eventos e associados em uma vitrine premium</span>
           <h1>
             Descubra o melhor do <em>turismo regional.</em>
           </h1>
@@ -209,8 +209,8 @@ export function EventsEditorialSection() {
           ))}
         </div>
         <div className="section-system-bar">
-          <span>Agenda Sync</span>
-          <strong>próximos 3 eventos + botão ver todos</strong>
+          <span>Agenda em destaque</span>
+          <strong>experiências selecionadas para os próximos dias</strong>
           <i aria-hidden="true" />
         </div>
         <div className="event-editorial-grid">
@@ -251,8 +251,8 @@ export function TasteEditorialSection() {
           <h2>Categorias gastronômicas para descobrir a cidade pelo paladar.</h2>
           <p>Um radar gastronômico com cafés, restaurantes, bares e produtores que dão identidade ao destino.</p>
           <div className="section-system-bar compact">
-            <span>Taste Radar</span>
-            <strong>{cuisines.length} categorias ativas</strong>
+            <span>Sabores da cidade</span>
+            <strong>{cuisines.length} categorias gastronômicas</strong>
             <i aria-hidden="true" />
           </div>
           <div className="cuisine-list">
@@ -344,8 +344,8 @@ export function StaysEditorialSection() {
           </Link>
         </div>
         <div className="section-system-bar">
-          <span>Stay Index</span>
-          <strong>logo, nome e detalhe completo</strong>
+          <span>Hospedagens associadas</span>
+          <strong>empresas com página completa e contato direto</strong>
           <i aria-hidden="true" />
         </div>
         <div className="stay-editorial-grid associated-stay-grid">

@@ -8587,3 +8587,380 @@ body.hero-is-scrolled .scroll-indicator {
     width: 116px;
   }
 }
+
+/* Final visual refinement layer */
+.page-shell {
+  background:
+    radial-gradient(circle at 6% 2%, rgba(245, 196, 0, 0.08), transparent 26rem),
+    linear-gradient(180deg, #f8f9fc, #ffffff 34%, #f8f9fc);
+}
+
+.section-system-bar {
+  border-radius: 16px;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 10px 30px rgba(6, 15, 53, 0.06);
+}
+
+.section-system-bar span,
+.section-system-bar strong {
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
+.section-system-bar span {
+  font-size: 0.78rem;
+}
+
+.section-system-bar strong {
+  color: rgba(6, 15, 53, 0.68);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.section-system-bar::before {
+  width: 28px;
+}
+
+.eyebrow,
+.category-chip {
+  box-shadow: 0 8px 22px rgba(6, 15, 53, 0.04);
+}
+
+.events-editorial,
+.stays-editorial,
+.editorial-blog {
+  background:
+    radial-gradient(circle at 86% 8%, rgba(245, 196, 0, 0.08), transparent 22rem),
+    #ffffff;
+}
+
+.event-portrait,
+.event-line,
+.associated-stay-card,
+.food-company-card,
+.blog-feature,
+.blog-row,
+.tourism-directory-card {
+  box-shadow: 0 10px 30px rgba(6, 15, 53, 0.08);
+}
+
+.event-portrait:hover,
+.event-line:hover,
+.associated-stay-card:hover,
+.food-company-card:hover,
+.blog-feature:hover,
+.blog-row:hover,
+.tourism-directory-card:hover {
+  box-shadow: 0 18px 52px rgba(6, 15, 53, 0.14);
+}
+
+.events-editorial .section-header,
+.stays-editorial .section-header,
+.editorial-blog .section-header {
+  border-bottom: 1px solid rgba(6, 15, 53, 0.08);
+  padding-bottom: 24px;
+}
+
+.events-editorial .section-number,
+.stays-editorial .section-number {
+  opacity: 0.9;
+}
+
+.events-editorial .event-portrait,
+.events-editorial .event-line {
+  overflow: hidden;
+}
+
+.events-editorial .event-portrait > div:last-child,
+.events-editorial .event-line > div:last-child {
+  border-top: 1px solid rgba(6, 15, 53, 0.06);
+}
+
+.taste-editorial {
+  background:
+    radial-gradient(circle at 15% 10%, rgba(245, 196, 0, 0.16), transparent 24rem),
+    radial-gradient(circle at 92% 18%, rgba(26, 58, 143, 0.42), transparent 28rem),
+    linear-gradient(180deg, #060f35, #0a1f6e 58%, #060f35);
+}
+
+.taste-editorial .taste-editorial-grid {
+  border: 1px solid rgba(245, 196, 0, 0.12);
+  border-radius: 24px;
+  padding: clamp(18px, 2vw, 26px);
+  background: rgba(255, 255, 255, 0.035);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.18);
+}
+
+.taste-editorial .section-system-bar {
+  background: rgba(255, 255, 255, 0.075);
+}
+
+.taste-editorial .food-company-card {
+  box-shadow: 0 14px 44px rgba(0, 0, 0, 0.16);
+}
+
+.places-marketplace-section {
+  background:
+    radial-gradient(circle at 12% 0%, rgba(245, 196, 0, 0.1), transparent 24rem),
+    #f8f9fc;
+}
+
+.tourism-directory-card {
+  border: 1px solid rgba(6, 15, 53, 0.08);
+  background: #ffffff;
+}
+
+.tourism-directory-card.yellow-card {
+  background:
+    radial-gradient(circle at 100% 0%, rgba(245, 196, 0, 0.18), transparent 16rem),
+    #ffffff;
+}
+
+.institutional-band {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.blog-feature,
+.blog-row {
+  border: 1px solid rgba(6, 15, 53, 0.08);
+}
+
+.footer-grid {
+  border-top: 1px solid rgba(245, 196, 0, 0.18);
+}
+
+@media (max-width: 768px) {
+  .section-system-bar {
+    box-shadow: 0 8px 24px rgba(6, 15, 53, 0.06);
+  }
+
+  .events-editorial .section-header,
+  .stays-editorial .section-header,
+  .editorial-blog .section-header {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .taste-editorial .taste-editorial-grid {
+    border: 0;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .taste-editorial .food-company-card {
+    box-shadow: 0 10px 30px rgba(6, 15, 53, 0.1);
+  }
+
+  .tourism-directory-card {
+    padding: 22px;
+  }
+}
+
+/* Cleaner commercial direction */
+.section-number {
+  display: inline-flex;
+  width: fit-content;
+  min-height: 30px;
+  align-items: center;
+  border: 1px solid rgba(245, 196, 0, 0.42);
+  border-radius: 999px;
+  padding: 6px 12px;
+  color: #060f35;
+  background: rgba(245, 196, 0, 0.14);
+  font-family: var(--font-inter), Arial, sans-serif;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1;
+}
+
+.events-editorial .section-number::before {
+  content: "Eventos ";
+}
+
+.taste-editorial .section-number::before {
+  content: "Gastronomia ";
+}
+
+.tourism-directory-card .section-number::before {
+  content: "Guia ";
+}
+
+.stays-editorial .section-number::before {
+  content: "Hospedagem ";
+}
+
+.section-header,
+.events-editorial .section-header,
+.stays-editorial .section-header,
+.editorial-blog .section-header {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.section-header > div,
+.taste-editorial-copy,
+.tourism-directory-card {
+  position: relative;
+}
+
+.section-header h2,
+.taste-editorial-copy h2,
+.tourism-directory-card h2,
+.institutional-band h2,
+.editorial-blog .section-header h2 {
+  max-width: 780px;
+  margin-top: 14px;
+  letter-spacing: -0.035em;
+}
+
+.section-header h2::after,
+.taste-editorial-copy h2::after {
+  width: 46px;
+  height: 2px;
+  margin-top: 16px;
+}
+
+.section-system-bar {
+  display: none;
+}
+
+.tourism-category-row,
+.cuisine-list {
+  margin-top: 24px;
+}
+
+.events-editorial .tourism-category-row {
+  margin-bottom: 30px;
+}
+
+.event-editorial-grid,
+.associated-stay-grid,
+.blog-layout,
+.food-company-list {
+  margin-top: 0;
+}
+
+.event-portrait,
+.event-line,
+.associated-stay-card,
+.food-company-card,
+.blog-feature,
+.blog-row,
+.tourism-directory-card {
+  border-color: rgba(6, 15, 53, 0.08);
+  box-shadow: 0 12px 34px rgba(6, 15, 53, 0.08);
+}
+
+.event-portrait:hover,
+.event-line:hover,
+.associated-stay-card:hover,
+.food-company-card:hover,
+.blog-feature:hover,
+.blog-row:hover,
+.tourism-directory-card:hover {
+  border-color: rgba(245, 196, 0, 0.52);
+  box-shadow: 0 20px 58px rgba(6, 15, 53, 0.14);
+}
+
+.events-editorial .event-portrait,
+.events-editorial .event-line {
+  border-radius: 18px;
+}
+
+.events-editorial .event-portrait-image,
+.events-editorial .event-line-image {
+  border-radius: 18px 18px 0 0;
+}
+
+.events-editorial .event-portrait > div:last-child,
+.events-editorial .event-line > div:last-child {
+  padding: 16px 18px;
+}
+
+.events-editorial .event-portrait h3,
+.events-editorial .event-line h3 {
+  font-size: 1rem;
+}
+
+.taste-editorial .taste-editorial-grid {
+  border-radius: 28px;
+}
+
+.taste-editorial .food-company-card,
+.stays-editorial .associated-stay-card {
+  border-radius: 18px;
+}
+
+.places-marketplace-grid {
+  align-items: stretch;
+}
+
+.tourism-directory-card {
+  min-height: 440px;
+}
+
+.tourism-directory-card h2 {
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.02;
+}
+
+.institutional-band {
+  border-radius: 0;
+}
+
+.institutional-metrics span {
+  border-radius: 16px;
+}
+
+.blog-feature,
+.blog-row {
+  border-radius: 18px;
+}
+
+.blog-feature-image,
+.blog-row-image {
+  border-radius: 18px 18px 0 0;
+}
+
+@media (max-width: 768px) {
+  .section-number {
+    min-height: 28px;
+    padding: 6px 10px;
+    font-size: 0.64rem;
+  }
+
+  .section-header h2,
+  .taste-editorial .taste-editorial-copy h2,
+  .stays-editorial .section-header h2,
+  .editorial-blog .section-header h2 {
+    margin-top: 12px;
+    font-size: clamp(1.58rem, 7vw, 2rem);
+  }
+
+  .section-header h2::after,
+  .taste-editorial-copy h2::after {
+    width: 38px;
+    margin-top: 12px;
+  }
+
+  .tourism-category-row,
+  .cuisine-list {
+    margin-top: 18px;
+  }
+
+  .events-editorial .event-portrait,
+  .events-editorial .event-line,
+  .food-company-card,
+  .associated-stay-card,
+  .blog-feature,
+  .blog-row {
+    border-radius: 16px;
+  }
+
+  .tourism-directory-card {
+    min-height: auto;
+  }
+}
