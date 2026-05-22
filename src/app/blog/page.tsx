@@ -1,4 +1,3 @@
-import Link from "next/link";
 import type { Metadata } from "next";
 import { imageOrFallback, posts } from "../data";
 
@@ -22,14 +21,6 @@ export default function BlogPage() {
               Últimas postagens com roteiros, gastronomia, hospedagem e novidades do turismo regional.
             </p>
           </div>
-          <div className="marketplace-panel">
-            <span className="date-badge">Editorial</span>
-            <h2>Curadoria institucional</h2>
-            <p>Conteúdos com imagem, título e subtítulo alimentados pelo sistema.</p>
-            <Link className="pill-button" href="/#blog">
-              Ver na home
-            </Link>
-          </div>
         </div>
       </section>
 
@@ -43,10 +34,14 @@ export default function BlogPage() {
           </div>
           <div className="blog-layout">
             {posts.map((post) => (
-              <article className="blog-row" key={post.title}>
-                <div className="blog-row-image" style={{ backgroundImage: `url(${imageOrFallback(post.image)})` }} />
-                <div>
-                  <span>POSTAGEM</span>
+              <article className="blog-feature" key={post.title}>
+                <div
+                  className="blog-feature-image"
+                  style={{
+                    backgroundImage: `linear-gradient(180deg, transparent, rgba(0, 43, 114, 0.42)), url(${imageOrFallback(post.image)})`
+                  }}
+                />
+                <div className="blog-feature-content">
                   <h3>{post.title}</h3>
                   <p>{post.subtitle}</p>
                 </div>

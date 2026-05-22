@@ -9067,20 +9067,124 @@ footer.footer .footer-socials a:hover svg circle,
   box-shadow: 0 0 22px rgba(245, 196, 0, 0.28);
 }
 
-.section-number {
-  position: relative;
+.section-number,
+.section-number::before,
+.section-number::after {
+  display: none !important;
+  content: none !important;
 }
 
-.section-number::after {
-  content: "";
-  position: absolute;
-  right: -12px;
-  top: 50%;
-  width: 7px;
-  height: 7px;
-  border: 1px solid rgba(245, 196, 0, 0.72);
-  background: rgba(245, 196, 0, 0.14);
-  transform: translateY(-50%) rotate(45deg);
+/* Clean section pass: remove numbered/scroll ornaments and simplify widgets */
+.luxe-meta,
+.luxe-scroll {
+  display: none !important;
+}
+
+.modern-bento-card > span:first-child {
+  display: none !important;
+}
+
+.section-system-bar {
+  display: none !important;
+}
+
+.stays-editorial .section-header {
+  margin-bottom: clamp(24px, 4vw, 42px) !important;
+}
+
+.stays-editorial .associated-stay-grid {
+  align-items: stretch !important;
+  gap: clamp(18px, 3vw, 34px) !important;
+}
+
+.stays-editorial .associated-stay-card {
+  display: grid !important;
+  grid-template-columns: auto minmax(0, 1fr) !important;
+  gap: 18px !important;
+  min-height: 132px !important;
+  align-items: center !important;
+  justify-items: start !important;
+  padding: 24px !important;
+  text-align: left !important;
+}
+
+.stays-editorial .associated-stay-card .company-logo-mark {
+  position: static !important;
+  grid-row: 1 / span 3;
+  width: 58px !important;
+  height: 58px !important;
+  margin: 0 !important;
+  flex: 0 0 auto !important;
+}
+
+.stays-editorial .associated-stay-card span,
+.stays-editorial .associated-stay-card h3,
+.stays-editorial .associated-stay-card small {
+  grid-column: 2;
+  min-width: 0;
+  margin: 0 !important;
+  text-align: left !important;
+}
+
+.stays-editorial .associated-stay-card h3 {
+  max-width: 100% !important;
+  line-height: 1.22 !important;
+  text-wrap: balance;
+}
+
+.editorial-blog .blog-layout {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(240px, 1fr)) !important;
+  gap: clamp(18px, 2.5vw, 30px) !important;
+  align-items: stretch !important;
+}
+
+.editorial-blog .blog-feature {
+  width: 100% !important;
+  min-height: 420px !important;
+  max-width: none !important;
+}
+
+.editorial-blog .blog-feature-image {
+  width: 100% !important;
+  min-height: 220px !important;
+  height: 220px !important;
+  border-radius: 14px 14px 0 0 !important;
+}
+
+.editorial-blog .blog-feature-content {
+  min-width: 0 !important;
+  padding: 24px !important;
+}
+
+.editorial-blog .blog-feature h3,
+.editorial-blog .blog-feature p {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 768px) {
+  .stays-editorial .associated-stay-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .stays-editorial .associated-stay-card {
+    grid-template-columns: 56px minmax(0, 1fr) !important;
+    min-height: 118px !important;
+    padding: 20px !important;
+  }
+
+  .editorial-blog .blog-layout {
+    grid-template-columns: 1fr !important;
+  }
+
+  .editorial-blog .blog-feature {
+    min-height: auto !important;
+  }
+
+  .editorial-blog .blog-feature-image {
+    min-height: 210px !important;
+    height: 210px !important;
+  }
 }
 
 .event-portrait,
@@ -9206,6 +9310,138 @@ footer.footer .footer-socials a:hover svg circle,
   .taste-editorial-copy::before,
   .tourism-directory-card::before {
     width: 48px;
+  }
+}
+
+/* Compact places/marketplace cards */
+.places-marketplace-section {
+  padding-block: clamp(42px, 6vw, 76px) !important;
+}
+
+.places-marketplace-grid {
+  gap: clamp(18px, 2vw, 28px) !important;
+}
+
+.places-marketplace-section .tourism-directory-card {
+  min-height: 0 !important;
+  padding: clamp(28px, 4vw, 46px) !important;
+}
+
+.places-marketplace-section .tourism-directory-card h2 {
+  max-width: 15ch !important;
+  margin: 18px 0 20px !important;
+  font-size: clamp(2rem, 3.2vw, 3.15rem) !important;
+  line-height: 0.98 !important;
+}
+
+.places-marketplace-section .tourism-directory-card p {
+  max-width: 44ch !important;
+  margin-bottom: 30px !important;
+  font-size: 0.98rem !important;
+  line-height: 1.55 !important;
+}
+
+.places-marketplace-section .tourism-directory-card .cuisine-list {
+  gap: 12px !important;
+  margin-top: 0 !important;
+}
+
+.places-marketplace-section .tourism-directory-card .cuisine-list span {
+  min-height: 42px !important;
+  padding: 10px 16px !important;
+  border-radius: 999px !important;
+  font-size: 0.72rem !important;
+  line-height: 1 !important;
+}
+
+@media (max-width: 768px) {
+  .places-marketplace-section {
+    padding-block: 34px !important;
+  }
+
+  .places-marketplace-grid {
+    gap: 14px !important;
+  }
+
+  .places-marketplace-section .tourism-directory-card {
+    padding: 22px 18px !important;
+    border-radius: 22px !important;
+  }
+
+  .places-marketplace-section .tourism-directory-card h2 {
+    max-width: none !important;
+    margin: 14px 0 12px !important;
+    font-size: clamp(1.45rem, 6vw, 1.9rem) !important;
+    line-height: 1.03 !important;
+  }
+
+  .places-marketplace-section .tourism-directory-card p {
+    max-width: none !important;
+    margin-bottom: 16px !important;
+    font-size: 0.9rem !important;
+    line-height: 1.45 !important;
+  }
+
+  .places-marketplace-section .tourism-directory-card .cuisine-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+  }
+
+  .places-marketplace-section .tourism-directory-card .cuisine-list span {
+    min-height: 36px !important;
+    padding: 8px 10px !important;
+    border-radius: 13px !important;
+    font-size: 0.62rem !important;
+    letter-spacing: 0.1em !important;
+  }
+}
+
+/* Internal listing heroes: remove side promo card and keep copy clean */
+.listing-hero-grid {
+  grid-template-columns: minmax(0, 760px) !important;
+  justify-content: start !important;
+  gap: 0 !important;
+}
+
+.listing-hero .lead {
+  max-width: 52ch !important;
+}
+
+.marketplace-panel {
+  display: none !important;
+}
+
+.blog-page-section .blog-layout {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(240px, 1fr)) !important;
+  gap: clamp(18px, 2.5vw, 30px) !important;
+}
+
+.blog-page-section .blog-feature {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+.editorial-blog .blog-feature-content,
+.blog-page-section .blog-feature-content {
+  background:
+    radial-gradient(circle at 90% 0%, rgba(245, 196, 0, 0.18), transparent 12rem),
+    linear-gradient(135deg, #173b86 0%, #0f2b70 58%, #0b2461 100%) !important;
+}
+
+.editorial-blog .blog-feature-content h3,
+.blog-page-section .blog-feature-content h3 {
+  color: #ffffff !important;
+}
+
+.editorial-blog .blog-feature-content p,
+.blog-page-section .blog-feature-content p {
+  color: rgba(255, 255, 255, 0.86) !important;
+}
+
+@media (max-width: 900px) {
+  .blog-page-section .blog-layout {
+    grid-template-columns: 1fr !important;
   }
 }
 

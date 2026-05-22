@@ -89,18 +89,6 @@ export function HomeHero() {
         </div>
       </div>
 
-      <div className="luxe-meta" aria-hidden="true">
-        <span>01 / 04</span>
-        <i />
-        <span>Campanha em destaque</span>
-        <i />
-        <span>Visite Cascavel CVB</span>
-      </div>
-
-      <a className="luxe-scroll" href="#eventos" aria-label="Rolar para eventos">
-        <span />
-        <small>Descer</small>
-      </a>
     </section>
   );
 }
@@ -131,7 +119,6 @@ export function ModernBentoSection() {
         <div className="modern-bento-grid">
           {modernSignals.map(([title, copy], index) => (
             <article className={`modern-bento-card modern-bento-${index + 1}`} key={title}>
-              <span>0{index + 1}</span>
               <h3>{title}</h3>
               <p>{copy}</p>
             </article>
@@ -148,7 +135,6 @@ export function EventsEditorialSection() {
       <div className="container editorial-shell">
         <div className="section-header editorial-header">
           <div>
-            <span className="section-number">01</span>
             <span className="eyebrow">O que fazer</span>
             <h2>Eventos com categorias, data visível e caminho claro para compra.</h2>
           </div>
@@ -162,11 +148,6 @@ export function EventsEditorialSection() {
               {category}
             </span>
           ))}
-        </div>
-        <div className="section-system-bar">
-          <span>Agenda em destaque</span>
-          <strong>experiências selecionadas para os próximos dias</strong>
-          <i aria-hidden="true" />
         </div>
         <div className="event-editorial-grid">
           {events.slice(0, 3).map((event) => (
@@ -202,15 +183,9 @@ export function TasteEditorialSection() {
           aria-hidden="true"
         />
         <div className="taste-editorial-copy">
-          <span className="section-number">02</span>
           <span className="eyebrow">Onde comer</span>
           <h2>Categorias gastronômicas para descobrir a cidade pelo paladar.</h2>
           <p>Um radar gastronômico com cafés, restaurantes, bares e produtores que dão identidade ao destino.</p>
-          <div className="section-system-bar compact">
-            <span>Sabores da cidade</span>
-            <strong>{cuisines.length} categorias gastronômicas</strong>
-            <i aria-hidden="true" />
-          </div>
           <div className="cuisine-list">
             {cuisines.map((item) => (
               <span key={item}>
@@ -246,7 +221,6 @@ export function PlacesAndMarketplaceSection() {
     <section className="section places-marketplace-section" id="comprar">
       <div className="container places-marketplace-grid">
         <article className="content-block tourism-directory-card">
-          <span className="section-number">03</span>
           <span className="eyebrow">Onde ir</span>
           <h2>Setores turísticos para navegar por interesse.</h2>
           <p>
@@ -264,7 +238,6 @@ export function PlacesAndMarketplaceSection() {
         </article>
 
         <article className="content-block tourism-directory-card yellow-card">
-          <span className="section-number">04</span>
           <span className="eyebrow">Onde comprar</span>
           <h2>Marketplace para produtos, vouchers e experiências locais.</h2>
           <p>
@@ -291,18 +264,12 @@ export function StaysEditorialSection() {
       <div className="container">
         <div className="section-header editorial-header">
           <div>
-            <span className="section-number">05</span>
             <span className="eyebrow">Onde ficar</span>
             <h2>Hospedagens associadas com caminho para página de entidade.</h2>
           </div>
           <Link className="ghost-button" href="#">
             Ver todos <span aria-hidden="true">→</span>
           </Link>
-        </div>
-        <div className="section-system-bar">
-          <span>Hospedagens associadas</span>
-          <strong>empresas com página completa e contato direto</strong>
-          <i aria-hidden="true" />
         </div>
         <div className="stay-editorial-grid associated-stay-grid">
           {stays.slice(0, 3).map((stay, index) => (
@@ -378,8 +345,6 @@ export function InstitutionalSection() {
 }
 
 export function BlogSection() {
-  const [featuredPost, ...sidePosts] = posts;
-
   return (
     <section className="section editorial-blog" id="blog">
       <div className="container">
@@ -393,25 +358,20 @@ export function BlogSection() {
           </Link>
         </div>
         <div className="blog-layout">
-          <Link className="blog-feature" href="/blog">
-            <div className="blog-feature-image" style={{ backgroundImage: `linear-gradient(180deg, transparent, rgba(0, 43, 114, 0.42)), url(${imageOrFallback(featuredPost.image)})` }} />
-            <div className="blog-feature-content">
-              <h3>{featuredPost.title}</h3>
-              <p>{featuredPost.subtitle}</p>
-            </div>
-          </Link>
-          <div className="blog-stack">
-            {sidePosts.map((post) => (
-              <Link className="blog-row" href="/blog" key={post.title}>
-                <div className="blog-row-image" style={{ backgroundImage: `url(${imageOrFallback(post.image)})` }} />
-                <div>
-                  <span>POSTAGEM</span>
-                  <h3>{post.title}</h3>
-                  <p>{post.subtitle}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
+          {posts.map((post) => (
+            <Link className="blog-feature" href="/blog" key={post.title}>
+              <div
+                className="blog-feature-image"
+                style={{
+                  backgroundImage: `linear-gradient(180deg, transparent, rgba(0, 43, 114, 0.42)), url(${imageOrFallback(post.image)})`
+                }}
+              />
+              <div className="blog-feature-content">
+                <h3>{post.title}</h3>
+                <p>{post.subtitle}</p>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </section>

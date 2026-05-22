@@ -23,14 +23,6 @@ export default function EventsPage() {
               data visível e acesso direto aos detalhes.
             </p>
           </div>
-          <div className="marketplace-panel">
-            <span className="date-badge">Mais procurado</span>
-            <h2>Festival Gastronômico de Cascavel</h2>
-            <p>Ingressos abertos, chefs convidados, feira de produtores e programação comercial.</p>
-            <Link className="pill-button" href="/eventos/festival-gastronomico-da-serra">
-              Comprar agora
-            </Link>
-          </div>
         </div>
       </section>
 
