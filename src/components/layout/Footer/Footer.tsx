@@ -12,15 +12,11 @@ export function Footer() {
           <Link className="brand" href={ROUTES.HOME}>
             <Image
               className="brand-logo footer-brand-logo"
-              src="/visite-cascavel-logo.png"
+              src="/visite-cascavel-logo-footer-image.png"
               alt="Visite Cascavel Convention & Visitors Bureau"
-              width={220}
-              height={118}
+              width={998}
+              height={882}
             />
-            <span>
-              {SITE_CONFIG.name}
-              <small>{SITE_CONFIG.descriptor}</small>
-            </span>
           </Link>
           <p>
             Portal institucional de turismo para conectar visitantes, empresas associadas e experiências

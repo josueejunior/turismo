@@ -1,8 +1,8 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { NAVIGATION_LABELS } from "@/constants/categories";
-import { ROUTES } from "@/constants/routes";
 import { SITE_CONFIG } from "@/constants/config";
+import { ROUTES } from "@/constants/routes";
 
 export function Navbar() {
   return (
@@ -11,17 +11,14 @@ export function Navbar() {
         <input className="nav-menu-toggle" id="nav-menu-toggle" type="checkbox" />
         <Link className="brand" href={ROUTES.HOME}>
           <Image
-            className="brand-logo"
-            src="/visite-cascavel-logo.png"
+            className="brand-logo nav-brand-logo"
+            src="/visite-cascavel-logo-white.png"
             alt="Visite Cascavel Convention & Visitors Bureau"
-            width={172}
-            height={92}
+            width={240}
+            height={100}
             priority
           />
-          <span className="brand-copy">
-            <strong>{SITE_CONFIG.name}</strong>
-            <small>{SITE_CONFIG.descriptor}</small>
-          </span>
+          <span className="nav-brand-name">{SITE_CONFIG.name}</span>
         </Link>
         <nav className="nav-links" aria-label="Menu principal">
           <Link href={ROUTES.EVENTS}>{NAVIGATION_LABELS.EVENTS}</Link>
