@@ -30,121 +30,76 @@ const modernSignals = [
 
 export function HomeHero() {
   return (
-    <section className="hero cinematic-hero">
-      <div className="hero-glow hero-glow-one" />
-      <div className="hero-glow hero-glow-two" />
-      <div className="hero-watermark" aria-hidden="true">Cascavel</div>
-      <div className="container hero-grid">
-        <div className="hero-copy">
-          <div className="hero-status-strip" aria-label="Status da plataforma">
-            <span>Convention Visitors</span>
-            <strong>Convention & Visitors Bureau</strong>
-            <i aria-hidden="true" />
-          </div>
-          <span className="hero-edition">Turismo regional · experiências selecionadas</span>
-          <span className="hero-route-code">Roteiros, eventos e associados em uma vitrine premium</span>
-          <h1>
-            Descubra o melhor do <em>turismo regional.</em>
-          </h1>
-          <p className="lead">
-            Uma abertura cinematográfica para turismo regional: banner configurável, campanha comercial
-            em destaque e visual institucional com presença de marca.
-          </p>
-          <form className="hero-search-bar" aria-label="Busca turística">
-            <span aria-hidden="true">⌕</span>
-            <input type="search" aria-label="Buscar experiências" placeholder="Buscar eventos..." />
-            <button type="submit">Buscar</button>
-          </form>
-          <div className="hero-signal-panel" aria-label="Resumo da curadoria">
-            <span>
-              <strong>1920x1080</strong>
-              resolução sugerida
-            </span>
-            <span>
-              <strong>01/04</strong>
-              slide ativo
-            </span>
-            <span>
-              <strong>ADS</strong>
-              espaço comercial
-            </span>
-          </div>
-          <div className="hero-app-preview" aria-label="Prévia de roteiro inteligente">
-            <div className="app-preview-topbar">
-              <span />
-              <span />
-              <span />
-              <strong>Banner Manager</strong>
-            </div>
-            <div className="app-preview-map">
-              <i className="route-node route-node-one" />
-              <i className="route-node route-node-two" />
-              <i className="route-node route-node-three" />
-            </div>
-            <div className="app-preview-row">
-              <span>Hero</span>
-              <strong>Campanha de turismo regional</strong>
-              <small>ativo</small>
-            </div>
-            <div className="app-preview-row muted">
-              <span>Ads</span>
-              <strong>Banner comercial vinculado</strong>
-              <small>opcional</small>
-            </div>
-          </div>
-          <div className="hero-actions">
-            <Link className="pill-button" href="/eventos">
-              Ver eventos <span aria-hidden="true">→</span>
-            </Link>
-            <Link className="ghost-button light-ghost" href="#marketplace">
-              Explorar associados
-            </Link>
-          </div>
-        </div>
-        <div className="scenic-showcase" aria-label="Paisagem turística regional">
-          <div className="hero-impact-badge" aria-hidden="true">
-            <span>Campanha</span>
-            <strong>Turismo regional</strong>
-          </div>
-          <div className="showcase-rail" aria-hidden="true">
-            <span>Slide 01</span>
-            <span>Banner</span>
-            <span>Campanha</span>
-          </div>
-          <div className="hero-compass" aria-hidden="true">
-            <span>VC</span>
-            <strong>24</strong>
-          </div>
-          <div className="showcase-mini-photo mini-photo-one" aria-hidden="true" />
-          <div className="showcase-mini-photo mini-photo-two" aria-hidden="true" />
-          <div className="showcase-card main-photo" style={{ backgroundImage: `url(${siteHeroImage})` }}>
-            <div className="hero-carousel-dots" aria-hidden="true">
-              <span className="active-dot" />
-              <span />
-              <span />
-              <span />
-            </div>
-            <div className="photo-label">
-              <span>Hero configurável · imagem definida pelo sistema</span>
-              <strong>um banner principal para vender a cidade no primeiro olhar</strong>
-            </div>
-          </div>
-          <div className="showcase-index">
-            <span>Carrossel</span>
-            <strong>01/04</strong>
-            <small>resolução e corte definidos pelo layout</small>
-          </div>
-          <div className="event-ticket-mini">
-            <span className="commercial-kicker">Banner comercial</span>
-            <strong>Área premium para patrocinador, campanha ou ingresso em destaque.</strong>
-            <Link className="pill-button" href="/eventos/festival-gastronomico-da-serra">
-              Acessar oferta <span aria-hidden="true">→</span>
-            </Link>
-          </div>
+    <section className="luxe-hero" id="hero">
+      <div className="luxe-hero-stage" aria-hidden="true">
+        <div className="luxe-hero-image" style={{ backgroundImage: `url(${siteHeroImage})` }} />
+        <div className="luxe-hero-veil" />
+        <div className="luxe-hero-grain" />
+      </div>
+
+      <div className="luxe-frame" aria-hidden="true">
+        <span className="luxe-corner luxe-corner-tl" />
+        <span className="luxe-corner luxe-corner-tr" />
+        <span className="luxe-corner luxe-corner-bl" />
+        <span className="luxe-corner luxe-corner-br" />
+      </div>
+
+      <aside className="luxe-rail" aria-hidden="true">
+        <span>Convention &amp; Visitors Bureau</span>
+        <i />
+        <strong>Cascavel · PR</strong>
+      </aside>
+
+      <div className="container luxe-hero-content">
+        <span className="luxe-overline">
+          <i aria-hidden="true" />
+          Turismo regional · curadoria 2026
+          <i aria-hidden="true" />
+        </span>
+
+        <h1 className="luxe-title">
+          <span className="luxe-title-line">Descubra o melhor do</span>
+          <em>turismo regional</em>
+          <span className="luxe-title-rule" aria-hidden="true" />
+        </h1>
+
+        <p className="luxe-lead">
+          Eventos, gastronomia, hospedagens e associados em uma vitrine institucional —
+          curada para visitantes exigentes e empresas que movimentam Cascavel.
+        </p>
+
+        <form className="luxe-search" aria-label="Busca turística">
+          <span aria-hidden="true">⌕</span>
+          <input
+            type="search"
+            aria-label="Buscar experiências"
+            placeholder="Buscar eventos, restaurantes ou hospedagens..."
+          />
+          <button type="submit">Buscar</button>
+        </form>
+
+        <div className="luxe-actions">
+          <Link className="luxe-cta-primary" href="/eventos">
+            Ver agenda de eventos
+            <span aria-hidden="true">→</span>
+          </Link>
+          <Link className="luxe-cta-ghost" href="#marketplace">
+            Explorar associados
+          </Link>
         </div>
       </div>
-      <a className="scroll-indicator" href="#eventos" aria-label="Rolar para eventos">
+
+      <div className="luxe-meta" aria-hidden="true">
+        <span>01 / 04</span>
+        <i />
+        <span>Campanha em destaque</span>
+        <i />
+        <span>Visite Cascavel CVB</span>
+      </div>
+
+      <a className="luxe-scroll" href="#eventos" aria-label="Rolar para eventos">
         <span />
+        <small>Descer</small>
       </a>
     </section>
   );
