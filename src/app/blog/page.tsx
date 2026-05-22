@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { imageOrFallback, posts } from "../data";
 
 export const metadata: Metadata = {
@@ -35,11 +36,13 @@ export default function BlogPage() {
           <div className="blog-layout">
             {posts.map((post) => (
               <article className="blog-feature" key={post.title}>
-                <div
+                <Image
                   className="blog-feature-image"
-                  style={{
-                    backgroundImage: `linear-gradient(180deg, transparent, rgba(0, 43, 114, 0.42)), url(${imageOrFallback(post.image)})`
-                  }}
+                  src={imageOrFallback(post.image)}
+                  alt=""
+                  aria-hidden="true"
+                  width={900}
+                  height={520}
                 />
                 <div className="blog-feature-content">
                   <h3>{post.title}</h3>

@@ -9451,11 +9451,9 @@ footer.footer .footer-socials a:hover svg circle,
   min-height: 230px !important;
   flex: 0 0 auto !important;
   border-radius: 14px 14px 0 0 !important;
-  background-color: #dce7f6 !important;
-  background-position: center !important;
-  background-size: cover !important;
-  background-repeat: no-repeat !important;
-  background-blend-mode: normal !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  background: #dce7f6 !important;
   filter: none !important;
   transform: none !important;
 }

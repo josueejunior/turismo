@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   categories,
   cuisines,
@@ -360,11 +361,13 @@ export function BlogSection() {
         <div className="blog-layout">
           {posts.map((post) => (
             <Link className="blog-feature" href="/blog" key={post.title}>
-              <div
+              <Image
                 className="blog-feature-image"
-                style={{
-                  backgroundImage: `linear-gradient(180deg, transparent, rgba(0, 43, 114, 0.42)), url(${imageOrFallback(post.image)})`
-                }}
+                src={imageOrFallback(post.image)}
+                alt=""
+                aria-hidden="true"
+                width={900}
+                height={520}
               />
               <div className="blog-feature-content">
                 <h3>{post.title}</h3>
