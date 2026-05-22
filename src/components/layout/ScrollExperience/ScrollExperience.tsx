@@ -34,45 +34,11 @@ export function ScrollExperience() {
       frame = window.requestAnimationFrame(updateScrollState);
     };
 
-    const counters = Array.from(document.querySelectorAll<HTMLElement>("[data-count-to]"));
-    const counterObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const element = entry.target as HTMLElement;
-
-          if (!entry.isIntersecting || element.dataset.countDone === "true") {
-            return;
-          }
-
-          element.dataset.countDone = "true";
-          const target = Number(element.dataset.countTo ?? 0);
-          const suffix = element.dataset.countSuffix ?? "";
-          const start = performance.now();
-          const duration = 2000;
-
-          const tick = (time: number) => {
-            const progress = Math.min((time - start) / duration, 1);
-            const eased = 1 - Math.pow(1 - progress, 3);
-            element.textContent = `${Math.round(target * eased)}${suffix}`;
-
-            if (progress < 1) {
-              window.requestAnimationFrame(tick);
-            }
-          };
-
-          window.requestAnimationFrame(tick);
-        });
-      },
-      { threshold: 0.35 }
-    );
-
-    counters.forEach((counter) => counterObserver.observe(counter));
     updateScrollState();
     window.addEventListener("scroll", onScroll, { passive: true });
 
     return () => {
       window.removeEventListener("scroll", onScroll);
-      counterObserver.disconnect();
 
       if (frame) {
         window.cancelAnimationFrame(frame);

@@ -345,15 +345,15 @@ export function InstitutionalSection() {
           </p>
           <div className="institutional-metrics" aria-label="Indicadores institucionais">
             <span>
-              <strong data-count-to="120" data-count-suffix="+">0+</strong>
+              <strong>120+</strong>
               associados
             </span>
             <span>
-              <strong data-count-to="50" data-count-suffix="+">0+</strong>
+              <strong>50+</strong>
               eventos
             </span>
             <span>
-              <strong data-count-to="10" data-count-suffix="+">0+</strong>
+              <strong>10+</strong>
               anos
             </span>
           </div>

@@ -502,7 +502,6 @@ button:focus-visible {
 
 .institutional-band p,
 .taste-editorial p,
-.stays-editorial p,
 .final-cta p {
   color: rgba(255, 255, 255, 0.76);
 }
@@ -1045,8 +1044,7 @@ button:focus-visible {
 }
 
 /* ----- Sections that have dark backgrounds ----------------- */
-.taste-editorial,
-.stays-editorial {
+.taste-editorial {
   background: var(--cv-ink);
   color: #fff;
 }
@@ -1062,7 +1060,7 @@ button:focus-visible {
     grid-template-columns: 1fr;
   }
   .associated-stay-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
   }
   .blog-layout {
     grid-template-columns: 1fr;

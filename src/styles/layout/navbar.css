@@ -161,7 +161,15 @@ header.nav .nav-cta:hover {
   box-shadow: 0 18px 38px rgba(245, 196, 0, 0.4);
 }
 
-/* Mobile burger and drawer */
+/* Mobile burger — overlay is portaled to <body> (see Navbar.tsx) so position:fixed is viewport-anchored */
+
+@media (min-width: 1025px) {
+  .nav-mobile-backdrop,
+  .nav-mobile-panel {
+    display: none !important;
+  }
+}
+
 @media (max-width: 1024px) {
   header.nav .nav-menu-button {
     display: flex;
@@ -176,10 +184,16 @@ header.nav .nav-cta:hover {
     background: transparent;
     cursor: pointer;
     gap: 5px;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    appearance: none;
     transition: border-color 0.25s var(--ease-out);
   }
 
-  header.nav .nav-menu-button:hover { border-color: #f5c400; }
+  header.nav .nav-menu-button:hover {
+    border-color: #f5c400;
+  }
 
   header.nav .nav-menu-button span {
     width: 18px;
@@ -189,29 +203,40 @@ header.nav .nav-cta:hover {
     transition: transform 0.3s var(--ease-out), opacity 0.3s var(--ease-out);
   }
 
-  header.nav .nav-menu-toggle:checked + .brand ~ .nav-menu-button span:first-child {
+  header.nav .nav-menu-button.is-open span:first-child {
     transform: translateY(3px) rotate(45deg);
   }
 
-  header.nav .nav-menu-toggle:checked + .brand ~ .nav-menu-button span:last-child {
+  header.nav .nav-menu-button.is-open span:last-child {
     transform: translateY(-4px) rotate(-45deg);
   }
 
   header.nav .nav-links,
-  header.nav .nav-cta { display: none; }
+  header.nav .nav-cta {
+    display: none;
+  }
 
-  header.nav .nav-menu-backdrop {
+  /* Portaled to document.body — not under header.nav (avoids backdrop-filter / transform containing blocks) */
+  .nav-mobile-backdrop {
     display: block;
     position: fixed;
     inset: 0;
-    z-index: 49;
+    z-index: 1000;
+    margin: 0;
+    padding: 0;
+    border: 0;
     background: rgba(6, 15, 53, 0.6);
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.35s var(--ease-out);
   }
 
-  header.nav .nav-drawer {
+  .nav-mobile-backdrop.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-mobile-panel {
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -219,27 +244,45 @@ header.nav .nav-cta:hover {
     top: 0;
     right: 0;
     bottom: 0;
-    z-index: 50;
+    left: auto;
+    z-index: 1001;
     width: min(340px, 84vw);
+    max-width: 100vw;
+    min-height: 100vh;
+    min-height: 100dvh;
     padding: 96px 32px 32px;
+    padding-top: calc(96px + env(safe-area-inset-top, 0px));
+    padding-bottom: calc(32px + env(safe-area-inset-bottom, 0px));
     background: #060f35;
+    border: 0;
     border-left: 1px solid rgba(245, 196, 0, 0.2);
+    border-radius: 0;
+    margin: 0;
+    box-sizing: border-box;
     transform: translateX(100%);
     transition: transform 0.45s var(--ease-out);
     box-shadow: -30px 0 80px rgba(0, 0, 0, 0.45);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    pointer-events: none;
   }
 
-  header.nav .nav-drawer::before {
+  .nav-mobile-panel.is-open {
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+
+  .nav-mobile-panel::before {
     content: "";
     position: absolute;
-    top: 96px;
+    top: calc(96px + env(safe-area-inset-top, 0px));
     left: 32px;
     width: 36px;
     height: 1px;
     background: #f5c400;
   }
 
-  header.nav .nav-drawer .drawer-head {
+  .nav-mobile-panel .drawer-head {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -254,12 +297,20 @@ header.nav .nav-cta:hover {
     color: rgba(255, 255, 255, 0.6);
   }
 
-  header.nav .nav-drawer .drawer-head label {
+  .nav-mobile-panel .drawer-close {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    font: inherit;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
     color: #f5c400;
     cursor: pointer;
   }
 
-  header.nav .nav-drawer a {
+  .nav-mobile-panel a {
     display: block;
     padding: 16px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
@@ -269,15 +320,16 @@ header.nav .nav-cta:hover {
     letter-spacing: 0.16em;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
     transition: color 0.25s var(--ease-out), padding 0.25s var(--ease-out);
   }
 
-  header.nav .nav-drawer a:hover {
+  .nav-mobile-panel a:hover {
     color: #f5c400;
     padding-left: 6px;
   }
 
-  header.nav .nav-drawer .drawer-cta {
+  .nav-mobile-panel .drawer-cta {
     margin-top: 24px;
     padding: 14px 20px;
     border: 1px solid #f5c400;
@@ -289,18 +341,9 @@ header.nav .nav-cta:hover {
     letter-spacing: 0.16em;
   }
 
-  header.nav .nav-drawer .drawer-cta:hover {
+  .nav-mobile-panel .drawer-cta:hover {
     color: #060f35;
     padding-left: 20px;
-  }
-
-  header.nav .nav-menu-toggle:checked ~ .nav-menu-backdrop {
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  header.nav .nav-menu-toggle:checked ~ .nav-drawer {
-    transform: translateX(0);
   }
 }
 

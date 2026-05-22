@@ -12,10 +12,10 @@ export function Footer() {
           <Link className="brand" href={ROUTES.HOME}>
             <Image
               className="brand-logo footer-brand-logo"
-              src="/visite-cascavel-logo-footer-image.png"
+              src="/visite-cascavel-logo-dark-bg.png"
               alt="Visite Cascavel Convention & Visitors Bureau"
-              width={998}
-              height={882}
+              width={1536}
+              height={1024}
             />
           </Link>
           <p>
