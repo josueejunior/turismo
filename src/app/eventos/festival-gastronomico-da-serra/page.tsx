@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { events, imageOrFallback } from "../../data";
+import styles from "./event-detail.module.css";
 
 const event = events[0];
 
@@ -11,67 +12,50 @@ export const metadata: Metadata = {
 
 export default function EventDetailPage() {
   return (
-    <main>
-      <section className="event-detail-hero luxury-event-hero">
-        <div className="container detail-grid">
-          <div className="event-hero-copy">
-            <span className="eyebrow bright-eyebrow">
-              <span className="dot" />
-              14 jun - Centro de Cascavel
-            </span>
-            <h1>Festival Gastronômico de Cascavel</h1>
-            <p className="lead">
-              Uma noite para provar receitas autorais, conhecer produtores locais e viver a cidade
-              por meio da mesa, da música e dos encontros.
+    <main className={styles.page}>
+      <section className={styles.hero}>
+        <div className={styles.heroGrid}>
+          <div className={styles.copy}>
+            <Link className={styles.backLink} href="/eventos">
+              ← Voltar para eventos
+            </Link>
+            <span className={styles.eyebrow}>{event.category} · {event.date}</span>
+            <h1>{event.title}</h1>
+            <p>
+              Uma noite para provar receitas autorais, conhecer produtores locais e viver a cidade por meio
+              da mesa, da música e dos encontros.
             </p>
-            <div className="event-highlights">
-              {["20 chefs", "8 vinícolas", "Show ao vivo"].map((item) => (
-                <span key={item}>{item}</span>
-              ))}
-            </div>
-            <div
-              className="detail-cover premium-cover"
-              aria-label="Festival gastronômico"
-              style={{ backgroundImage: `linear-gradient(180deg, transparent, rgba(0, 43, 114, 0.5)), url(${imageOrFallback(event.image)})` }}
-            >
-              <div className="cover-caption">
-                <span>Experiência destaque</span>
-                <strong>Noite de sabores, música e produtores locais</strong>
-              </div>
+            <div className={styles.facts} aria-label="Destaques do evento">
+              <span>20 chefs convidados</span>
+              <span>Feira de produtores</span>
+              <span>Show ao vivo</span>
             </div>
           </div>
 
-          <aside className="ticket-card premium-ticket">
-            <span className="date-badge">Ingressos disponíveis</span>
+          <aside className={styles.ticketCard} aria-label="Ingressos">
+            <span>Ingressos disponíveis</span>
             <h2>Garanta sua noite no festival</h2>
-            <div className="price-line">
-              <span>a partir de</span>
+            <div className={styles.price}>
+              <small>a partir de</small>
               <strong>R$ 89</strong>
             </div>
-            <p className="card-meta">
-              Lotes limitados com degustação, show ao vivo e acesso à feira de produtores associados.
-            </p>
-            <Link className="pill-button" href="#">
+            <p>Lotes limitados com degustação, programação musical e acesso à feira regional.</p>
+            <Link className={styles.primaryButton} href="#">
               Comprar ingressos
             </Link>
-            <div className="ticket-benefits">
-              <span>Degustação inclusa</span>
-              <span>Entrada digital</span>
-              <span>Cancelamento fácil</span>
-            </div>
-            <div className="section-actions">
-              <Link className="ghost-button" href="/eventos">
-                Voltar para eventos
-              </Link>
-            </div>
           </aside>
         </div>
       </section>
 
-      <section className="section">
-        <div className="container detail-grid">
-          <article className="content-block">
-            <span className="eyebrow">Sobre o evento</span>
+      <section className={styles.content}>
+        <div className={styles.contentGrid}>
+          <article className={styles.mainCard}>
+            <div
+              className={styles.coverImage}
+              style={{ backgroundImage: `url(${imageOrFallback(event.image)})` }}
+              aria-label="Festival gastronômico"
+            />
+            <span className={styles.sectionLabel}>Sobre o evento</span>
             <h2>Gastronomia regional com estética contemporânea.</h2>
             <p>
               O festival reúne restaurantes, produtores artesanais, sommeliers e artistas em uma
@@ -79,18 +63,18 @@ export default function EventDetailPage() {
               ilhas de degustação, música ao vivo e espaços fotográficos para registrar a noite.
             </p>
             <p>
-              A página do evento concentra conteúdo explicativo, fotos, vídeos, endereço, contatos e
-              links úteis, reduzindo dúvidas antes da compra e aumentando a conversão.
+              A proposta é aproximar visitantes, empresas associadas e produtores regionais em uma
+              experiência clara, organizada e fácil de compartilhar.
             </p>
-            <div className="media-grid">
+            <div className={styles.photoGrid}>
               <div
-                className="media-tile"
+                className={styles.photo}
                 style={{
                   backgroundImage: `url(${imageOrFallback(event.photos[0])})`
                 }}
               />
               <div
-                className="media-tile"
+                className={styles.photo}
                 style={{
                   backgroundImage: `url(${imageOrFallback(event.photos[1])})`
                 }}
@@ -98,51 +82,38 @@ export default function EventDetailPage() {
             </div>
           </article>
 
-          <aside className="content-block">
+          <aside className={styles.infoCard}>
             <h3>Informações</h3>
-            <p>
-              <strong>Endereço:</strong>
-              <br />
-              Centro de Eventos, Cascavel - PR
-            </p>
-            <p>
-              <strong>Contato:</strong>
-              <br />
-              contato@visitecascavel.com.br
-              <br />
-              (00) 90000-0000
-            </p>
-            <h3>Links úteis</h3>
-            <div className="link-list">
-              <Link className="resource-link" href="#">
-                <span>Mapa do evento</span>
-                <strong>Acessar</strong>
-              </Link>
-              <Link className="resource-link" href="#">
-                <span>Programação completa</span>
-                <strong>Acessar</strong>
-              </Link>
-              <Link className="resource-link" href="#">
-                <span>Website oficial</span>
-                <strong>Acessar</strong>
-              </Link>
-            </div>
+            <dl>
+              <div>
+                <dt>Data</dt>
+                <dd>{event.date}</dd>
+              </div>
+              <div>
+                <dt>Local</dt>
+                <dd>Centro de Eventos, Cascavel - PR</dd>
+              </div>
+              <div>
+                <dt>Contato</dt>
+                <dd>contato@visitecascavel.com.br</dd>
+              </div>
+            </dl>
+            <Link className={styles.secondaryButton} href="/eventos">
+              Ver outros eventos
+            </Link>
           </aside>
         </div>
       </section>
 
-      <section className="section event-cta-section">
-        <div className="container event-cta-band">
+      <section className={styles.ctaSection}>
+        <div className={styles.ctaCard}>
           <div>
-            <span className="eyebrow">Últimos lotes</span>
-            <h2>Não deixe o evento mais desejado da temporada passar.</h2>
-            <p>
-              O CTA fica evidente quando houver link de ingresso, conectado à proposta comercial da
-              página e preparado para transformar interesse em compra.
-            </p>
+            <span className={styles.eyebrow}>Últimos lotes</span>
+            <h2>Reserve sua experiência gastronômica em Cascavel.</h2>
+            <p>O botão pode apontar para a plataforma oficial de ingressos quando a venda estiver ativa.</p>
           </div>
-          <Link className="pill-button" href="#">
-            Comprar meu ingresso
+          <Link className={styles.primaryButton} href="#">
+            Comprar ingresso
           </Link>
         </div>
       </section>
