@@ -2,7 +2,6 @@ import { MotionReveal } from "@/components/common/MotionReveal";
 import {
   BlogSection,
   EventsEditorialSection,
-  FinalCtaSection,
   HomeHero,
   InstitutionalSection,
   PlacesAndMarketplaceSection,
@@ -31,9 +30,6 @@ export default function Home() {
       </MotionReveal>
       <MotionReveal delay={0.1}>
         <BlogSection />
-      </MotionReveal>
-      <MotionReveal delay={0.1}>
-        <FinalCtaSection />
       </MotionReveal>
     </main>
   );

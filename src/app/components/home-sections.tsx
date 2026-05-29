@@ -33,8 +33,6 @@ const modernSignals = [
 ];
 
 export function HomeHero() {
-  const homeEventsCount = Math.min(3, events.length);
-
   return (
     <section className="luxe-hero" id="hero">
       <div className="luxe-hero-stage" aria-hidden="true">
@@ -44,39 +42,20 @@ export function HomeHero() {
       </div>
 
       <div className="container luxe-hero-content">
-        <span className="luxe-overline luxe-hero-block--desktop">
+        <span className="luxe-overline">
           <i aria-hidden="true" />
           Turismo regional · curadoria 2026
           <i aria-hidden="true" />
         </span>
 
-        <p className="luxe-hero-badge luxe-hero-block--mobile">Turismo sem ruído</p>
-
         <h1 className="luxe-title">
-          <span className="luxe-hero-desktop-title luxe-hero-block--desktop">
-            <span className="luxe-title-line">Descubra o melhor do</span>
-            <em>turismo regional</em>
-          </span>
-          <span className="luxe-hero-mobile-title luxe-hero-block--mobile">
-            Um portal institucional com experiência de marketplace.
-          </span>
+          <span className="luxe-title-line">Descubra o melhor do</span>
+          <em>turismo regional</em>
         </h1>
 
         <p className="luxe-hero-cascavel-line">Turismo em Cascavel</p>
 
-        <ul className="luxe-hero-pills luxe-hero-block--mobile" aria-label="Destaques do portal">
-          <li>
-            <strong>4</strong> categorias
-          </li>
-          <li>
-            <strong>{homeEventsCount}</strong> eventos na home
-          </li>
-          <li>
-            <strong>CVB</strong> identidade
-          </li>
-        </ul>
-
-        <form className="luxe-search luxe-hero-block--desktop" aria-label="Busca turística">
+        <form className="luxe-search" aria-label="Busca turística">
           <span aria-hidden="true">⌕</span>
           <input
             type="search"
@@ -86,20 +65,13 @@ export function HomeHero() {
           <button type="submit">Buscar</button>
         </form>
 
-        <div className="luxe-actions luxe-hero-block--desktop">
+        <div className="luxe-actions">
           <Link className="luxe-cta-primary luxe-cta-label-strong" href={ROUTES.EVENTS}>
             Ver agenda de eventos
             <span aria-hidden="true">→</span>
           </Link>
           <Link className="luxe-cta-ghost luxe-cta-label-strong" href="#marketplace">
             Explorar associados
-          </Link>
-        </div>
-
-        <div className="luxe-actions luxe-actions--mobile-cta luxe-hero-block--mobile">
-          <Link className="luxe-cta-primary" href={ROUTES.EVENTS}>
-            Abrir agenda
-            <span aria-hidden="true">→</span>
           </Link>
         </div>
       </div>
@@ -394,27 +366,6 @@ export function BlogSection() {
             </Link>
           ))}
         </div>
-      </div>
-    </section>
-  );
-}
-
-export function FinalCtaSection() {
-  return (
-    <section className="section final-cta-section">
-      <div className="container final-cta">
-        <div>
-          <span className="eyebrow bright-eyebrow">Turismo sem ruído</span>
-          <h2>Um portal institucional com experiência de marketplace.</h2>
-          <div className="cta-metrics">
-            <span><strong>4</strong> categorias</span>
-            <span><strong>3</strong> eventos na home</span>
-            <span><strong>CVB</strong> identidade</span>
-          </div>
-        </div>
-        <Link className="pill-button" href="/eventos">
-          Abrir agenda <span aria-hidden="true">→</span>
-        </Link>
       </div>
     </section>
   );

@@ -7486,18 +7486,8 @@ body.hero-is-scrolled .scroll-indicator {
     width: 18px;
   }
 
-  .luxe-hero h1.luxe-title .luxe-hero-desktop-title {
-    max-width: 9.5ch;
-  }
-
-  .luxe-hero h1.luxe-title .luxe-hero-mobile-title {
-    max-width: min(100%, 22ch);
-    margin-inline: auto;
-    font-size: clamp(1.2rem, 4.2vw, 1.5rem);
-    line-height: 1.22;
-  }
-
   .luxe-hero h1.luxe-title {
+    max-width: 9.5ch;
     gap: 2px;
     font-size: clamp(2.2rem, 12vw, 3.45rem);
     line-height: 0.96;
@@ -7591,10 +7581,6 @@ body.hero-is-scrolled .scroll-indicator {
 
   .luxe-hero h1.luxe-title {
     font-size: clamp(2rem, 11.5vw, 2.9rem);
-  }
-
-  .luxe-hero h1.luxe-title .luxe-hero-mobile-title {
-    font-size: clamp(1.1rem, 4vw, 1.35rem);
   }
 }
 

@@ -198,24 +198,6 @@
   text-shadow: 0 6px 36px rgba(245, 196, 0, 0.28);
 }
 
-.luxe-hero-block--mobile {
-  display: none;
-}
-
-.luxe-hero-desktop-title {
-  display: grid;
-  gap: 6px;
-}
-
-.luxe-hero-mobile-title {
-  display: none;
-  margin: 0;
-  font-family: var(--font-playfair), Georgia, serif;
-  font-style: normal;
-  font-weight: 700;
-  color: #fff;
-}
-
 .luxe-hero-cascavel-line {
   margin: 0;
   font-family: var(--font-playfair), Georgia, serif;
@@ -232,62 +214,6 @@
   text-transform: uppercase;
   letter-spacing: 0.14em;
   font-size: 12px;
-}
-
-.luxe-hero-badge {
-  margin: 0;
-  padding: 8px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(6, 15, 53, 0.55);
-  font-family: var(--font-inter), Inter, sans-serif;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.26em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.72);
-}
-
-.luxe-hero-pills {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.luxe-hero-pills li {
-  flex: 1 1 auto;
-  min-width: min(100%, 104px);
-  max-width: 160px;
-  padding: 10px 8px;
-  border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(6, 15, 53, 0.45);
-  font-family: var(--font-inter), Inter, sans-serif;
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  line-height: 1.25;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.78);
-}
-
-.luxe-hero-pills strong {
-  display: block;
-  margin-bottom: 2px;
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  color: #f5c400;
-}
-
-.luxe-actions--mobile-cta {
-  width: 100%;
-  margin-top: 4px;
 }
 
 .luxe-title-rule {
@@ -565,27 +491,6 @@
 }
 
 @media (max-width: 768px) {
-  .luxe-hero-block--desktop {
-    display: none !important;
-  }
-
-  .luxe-hero-block--mobile {
-    display: block;
-  }
-
-  .luxe-hero h1.luxe-title .luxe-hero-mobile-title {
-    display: block;
-  }
-
-  .luxe-hero h1.luxe-title {
-    display: block;
-    max-width: none;
-  }
-
-  .luxe-hero-pills {
-    display: flex;
-  }
-
   .luxe-hero {
     padding: 112px 0 88px;
     min-height: 100vh;

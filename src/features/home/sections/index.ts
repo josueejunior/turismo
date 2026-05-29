@@ -1,7 +1,6 @@
 export {
   BlogSection,
   EventsEditorialSection,
-  FinalCtaSection,
   HomeHero,
   InstitutionalSection,
   ModernBentoSection,
