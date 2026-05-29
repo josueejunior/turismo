@@ -1,5 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
+import { HeroBackgroundFade } from "@/components/home/HeroBackgroundFade";
+import { ROUTES } from "@/constants/routes";
 import {
   categories,
   cuisines,
@@ -11,8 +13,7 @@ import {
   posts,
   restaurants,
   sectors,
-  siteHeroImage,
-  stays
+  siteHeroBackgroundImages
 } from "../data";
 
 const visualTiles = [
@@ -30,32 +31,50 @@ const modernSignals = [
 ];
 
 export function HomeHero() {
+  const homeEventsCount = Math.min(3, events.length);
+
   return (
     <section className="luxe-hero" id="hero">
       <div className="luxe-hero-stage" aria-hidden="true">
-        <div className="luxe-hero-image" style={{ backgroundImage: `url(${siteHeroImage})` }} />
+        <HeroBackgroundFade images={siteHeroBackgroundImages} />
         <div className="luxe-hero-veil" />
         <div className="luxe-hero-grain" />
       </div>
 
       <div className="container luxe-hero-content">
-        <span className="luxe-overline">
+        <span className="luxe-overline luxe-hero-block--desktop">
           <i aria-hidden="true" />
           Turismo regional · curadoria 2026
           <i aria-hidden="true" />
         </span>
 
+        <p className="luxe-hero-badge luxe-hero-block--mobile">Turismo sem ruído</p>
+
         <h1 className="luxe-title">
-          <span className="luxe-title-line">Descubra o melhor do</span>
-          <em>turismo regional</em>
+          <span className="luxe-hero-desktop-title luxe-hero-block--desktop">
+            <span className="luxe-title-line">Descubra o melhor do</span>
+            <em>turismo regional</em>
+          </span>
+          <span className="luxe-hero-mobile-title luxe-hero-block--mobile">
+            Um portal institucional com experiência de marketplace.
+          </span>
         </h1>
 
-        <p className="luxe-lead">
-          Eventos, gastronomia, hospedagens e associados em uma vitrine institucional —
-          curada para visitantes exigentes e empresas que movimentam Cascavel.
-        </p>
+        <p className="luxe-hero-cascavel-line">Turismo em Cascavel</p>
 
-        <form className="luxe-search" aria-label="Busca turística">
+        <ul className="luxe-hero-pills luxe-hero-block--mobile" aria-label="Destaques do portal">
+          <li>
+            <strong>4</strong> categorias
+          </li>
+          <li>
+            <strong>{homeEventsCount}</strong> eventos na home
+          </li>
+          <li>
+            <strong>CVB</strong> identidade
+          </li>
+        </ul>
+
+        <form className="luxe-search luxe-hero-block--desktop" aria-label="Busca turística">
           <span aria-hidden="true">⌕</span>
           <input
             type="search"
@@ -65,13 +84,20 @@ export function HomeHero() {
           <button type="submit">Buscar</button>
         </form>
 
-        <div className="luxe-actions">
-          <Link className="luxe-cta-primary" href="/eventos">
+        <div className="luxe-actions luxe-hero-block--desktop">
+          <Link className="luxe-cta-primary luxe-cta-label-strong" href={ROUTES.EVENTS}>
             Ver agenda de eventos
             <span aria-hidden="true">→</span>
           </Link>
-          <Link className="luxe-cta-ghost" href="#marketplace">
+          <Link className="luxe-cta-ghost luxe-cta-label-strong" href="#marketplace">
             Explorar associados
+          </Link>
+        </div>
+
+        <div className="luxe-actions luxe-actions--mobile-cta luxe-hero-block--mobile">
+          <Link className="luxe-cta-primary" href={ROUTES.EVENTS}>
+            Abrir agenda
+            <span aria-hidden="true">→</span>
           </Link>
         </div>
       </div>
@@ -224,7 +250,10 @@ export function PlacesAndMarketplaceSection() {
           </div>
         </article>
 
-        <article className="content-block tourism-directory-card yellow-card">
+        <article
+          id="marketplace"
+          className="content-block tourism-directory-card yellow-card scroll-anchor-marketplace"
+        >
           <span className="eyebrow">Onde comprar</span>
           <h2>Marketplace para produtos, vouchers e experiências locais.</h2>
           <p>
@@ -240,44 +269,6 @@ export function PlacesAndMarketplaceSection() {
             ))}
           </div>
         </article>
-      </div>
-    </section>
-  );
-}
-
-export function StaysEditorialSection() {
-  return (
-    <section className="section stays-editorial" id="marketplace">
-      <div className="container">
-        <div className="section-header editorial-header">
-          <div>
-            <span className="eyebrow">Onde ficar</span>
-            <h2>Hospedagens associadas com caminho para página de entidade.</h2>
-          </div>
-          <Link className="ghost-button" href="#">
-            Ver todos <span aria-hidden="true">→</span>
-          </Link>
-        </div>
-        <div className="stay-editorial-grid associated-stay-grid">
-          {stays.slice(0, 3).map((stay, index) => (
-            <Link
-              className={`stay-visual-card stay-visual-${index + 1} associated-stay-card`}
-              href={stay.detailHref}
-              key={stay.name}
-              style={{ backgroundImage: `url(${imageOrFallback(stay.bannerImage)})` }}
-            >
-              <div
-                className="company-logo-mark"
-                style={stay.logoImage ? { backgroundImage: `url(${stay.logoImage})` } : undefined}
-              >
-                {!stay.logoImage && stay.logo}
-              </div>
-              <span>{stay.tagline}</span>
-              <h3>{stay.name}</h3>
-              <small>Ver informações da entidade</small>
-            </Link>
-          ))}
-        </div>
       </div>
     </section>
   );

@@ -12,7 +12,8 @@ const MOBILE_NAV_LINKS = [
   { href: ROUTES.EVENTS, label: NAVIGATION_LABELS.EVENTS },
   { href: ROUTES.WHERE_TO_GO, label: NAVIGATION_LABELS.WHERE_TO_GO },
   { href: ROUTES.MARKETPLACE, label: NAVIGATION_LABELS.MARKETPLACE },
-  { href: ROUTES.BLOG, label: NAVIGATION_LABELS.BLOG }
+  { href: ROUTES.BLOG, label: NAVIGATION_LABELS.BLOG },
+  { href: ROUTES.ASSOCIATES, label: NAVIGATION_LABELS.ASSOCIATES }
 ] as const;
 
 export function Navbar() {
@@ -87,6 +88,13 @@ export function Navbar() {
               {label}
             </Link>
           ))}
+          <Link
+            className="drawer-secondary-cta"
+            href={ROUTES.ASSOCIATE_SELF_SERVICE}
+            onClick={closeMobile}
+          >
+            Sou associado
+          </Link>
           <Link className="drawer-cta" href={ROUTES.EVENTS} onClick={closeMobile}>
             Entrar
           </Link>
@@ -115,10 +123,16 @@ export function Navbar() {
             <Link href={ROUTES.WHERE_TO_GO}>{NAVIGATION_LABELS.WHERE_TO_GO}</Link>
             <Link href={ROUTES.MARKETPLACE}>{NAVIGATION_LABELS.MARKETPLACE}</Link>
             <Link href={ROUTES.BLOG}>{NAVIGATION_LABELS.BLOG}</Link>
+            <Link href={ROUTES.ASSOCIATES}>{NAVIGATION_LABELS.ASSOCIATES}</Link>
           </nav>
-          <Link className="nav-cta" href={ROUTES.EVENTS}>
-            Entrar
-          </Link>
+          <div className="nav-desktop-actions">
+            <Link className="nav-cta-secondary" href={ROUTES.ASSOCIATE_SELF_SERVICE}>
+              Sou associado
+            </Link>
+            <Link className="nav-cta" href={ROUTES.EVENTS}>
+              Entrar
+            </Link>
+          </div>
           <button
             type="button"
             className={`nav-menu-button${mobileOpen ? " is-open" : ""}`}

@@ -8,5 +8,8 @@ export const ROUTES = {
   ABOUT: "/#institucional",
   WHERE_TO_GO: "/#setores",
   MARKETPLACE: "/#comprar",
-  STAYS: "/#marketplace"
+  STAYS: "/#marketplace",
+  ASSOCIATES: "/#marketplace",
+  /** Área institucional — placeholder até fluxo de associados */
+  ASSOCIATE_SELF_SERVICE: "/#institucional"
 } as const;

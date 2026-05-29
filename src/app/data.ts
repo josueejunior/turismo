@@ -1,8 +1,13 @@
 export const fallbackTourismImage =
   "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=85";
 
-export const siteHeroImage =
-  "https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=2400&q=92";
+/** Fotos de Cascavel-PR no fundo da home (hero), em rotação com fade */
+export const siteHeroBackgroundImages = [
+  "/hero-cascavel/1.jpg.jpeg",
+  "/hero-cascavel/2.jpg.jpeg",
+  "/hero-cascavel/3.jpg.jpeg",
+  "/hero-cascavel/5.jpg.jpeg"
+] as const;
 
 export const institutionalBackgroundImage =
   "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=1400&q=85";

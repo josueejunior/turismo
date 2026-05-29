@@ -6,7 +6,6 @@ import {
   HomeHero,
   InstitutionalSection,
   PlacesAndMarketplaceSection,
-  StaysEditorialSection,
   TasteEditorialSection,
 } from "@/features/home/sections";
 
@@ -22,9 +21,6 @@ export default function Home() {
       </MotionReveal>
       <MotionReveal delay={0.1}>
         <PlacesAndMarketplaceSection />
-      </MotionReveal>
-      <MotionReveal delay={0.1}>
-        <StaysEditorialSection />
       </MotionReveal>
       <MotionReveal delay={0.1}>
         <InstitutionalSection />
