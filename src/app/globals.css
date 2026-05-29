@@ -7975,7 +7975,10 @@ body.hero-is-scrolled .scroll-indicator {
   .nav-brand-logo,
   .nav .brand-logo,
   header.nav .brand-logo {
-    width: 240px !important;
+    width: auto !important;
+    height: 52px !important;
+    max-height: 52px !important;
+    max-width: min(62vw, 220px) !important;
   }
 
   .nav-inner::after {
@@ -9809,9 +9812,10 @@ footer.footer .footer-socials a:hover svg circle,
   .nav-brand-logo,
   .nav .brand-logo,
   header.nav .brand-logo {
-    width: 132px !important;
-    height: 48px !important;
-    max-height: 48px !important;
+    width: auto !important;
+    height: 58px !important;
+    max-height: 58px !important;
+    max-width: min(58vw, 260px) !important;
     object-fit: contain !important;
     object-position: left center !important;
   }
@@ -9821,14 +9825,6 @@ footer.footer .footer-socials a:hover svg circle,
     width: 44px !important;
     height: 44px !important;
     border-radius: 12px !important;
-  }
-}
-
-@media (max-width: 390px) {
-  .nav-brand-logo,
-  .nav .brand-logo,
-  header.nav .brand-logo {
-    width: 118px !important;
   }
 }
 
