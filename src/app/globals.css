@@ -9846,4 +9846,28 @@ footer.footer .footer-socials a:hover svg circle,
   }
 }
 
+/* Cartões de hospedagem na home — foto de capa por trás do nome (sobrepõe fundo branco legado) */
+.stays-editorial .associated-stay-card.associated-stay-card--cover {
+  background-color: transparent !important;
+  background-image: var(--stay-bg-image) !important;
+  background-size: cover, cover !important;
+  background-position: center, center !important;
+  background-repeat: no-repeat, no-repeat !important;
+}
+
+.stays-editorial .associated-stay-card.associated-stay-card--cover h3,
+.stays-editorial .associated-stay-card.associated-stay-card--cover span,
+.stays-editorial .associated-stay-card.associated-stay-card--cover small {
+  color: #fff !important;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.55);
+}
+
+.stays-editorial .associated-stay-card.associated-stay-card--cover .company-logo-mark {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+section.stays-editorial#marketplace {
+  scroll-margin-top: 96px;
+}
 

@@ -642,8 +642,3 @@
     opacity: 1;
   }
 }
-
-/* #marketplace aponta para o bloco marketplace (secção hospedagens removida) */
-.scroll-anchor-marketplace {
-  scroll-margin-top: 96px;
-}

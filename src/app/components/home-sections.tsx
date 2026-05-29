@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { HeroBackgroundFade } from "@/components/home/HeroBackgroundFade";
@@ -13,7 +14,8 @@ import {
   posts,
   restaurants,
   sectors,
-  siteHeroBackgroundImages
+  siteHeroBackgroundImages,
+  stays
 } from "../data";
 
 const visualTiles = [
@@ -250,10 +252,7 @@ export function PlacesAndMarketplaceSection() {
           </div>
         </article>
 
-        <article
-          id="marketplace"
-          className="content-block tourism-directory-card yellow-card scroll-anchor-marketplace"
-        >
+        <article className="content-block tourism-directory-card yellow-card">
           <span className="eyebrow">Onde comprar</span>
           <h2>Marketplace para produtos, vouchers e experiências locais.</h2>
           <p>
@@ -269,6 +268,48 @@ export function PlacesAndMarketplaceSection() {
             ))}
           </div>
         </article>
+      </div>
+    </section>
+  );
+}
+
+export function StaysEditorialSection() {
+  return (
+    <section className="section stays-editorial" id="marketplace">
+      <div className="container">
+        <div className="section-header editorial-header">
+          <div>
+            <span className="eyebrow">Onde ficar</span>
+            <h2>Hospedagens associadas com caminho para página de entidade.</h2>
+          </div>
+          <Link className="ghost-button" href="#">
+            Ver todos <span aria-hidden="true">→</span>
+          </Link>
+        </div>
+        <div className="stay-editorial-grid associated-stay-grid">
+          {stays.slice(0, 3).map((stay, index) => {
+            const cover = imageOrFallback(stay.bannerImage);
+            const bgLayers = `linear-gradient(135deg, rgba(6, 15, 53, 0.5) 0%, rgba(6, 15, 53, 0.88) 100%), url("${cover}")`;
+            return (
+              <Link
+                className={`stay-visual-card stay-visual-${index + 1} associated-stay-card associated-stay-card--cover`}
+                href={stay.detailHref}
+                key={stay.name}
+                style={{ "--stay-bg-image": bgLayers } as CSSProperties}
+              >
+                <div
+                  className="company-logo-mark"
+                  style={stay.logoImage ? { backgroundImage: `url(${stay.logoImage})` } : undefined}
+                >
+                  {!stay.logoImage && stay.logo}
+                </div>
+                <span>{stay.tagline}</span>
+                <h3>{stay.name}</h3>
+                <small>Ver informações da entidade</small>
+              </Link>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

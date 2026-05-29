@@ -188,7 +188,8 @@ export const stays = [
     name: "Pousada Vale Oeste",
     logo: "VO",
     logoImage: "",
-    bannerImage: "",
+    bannerImage:
+      "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=86",
     tagline: "Refúgio regional",
     title: "Pousada Vale Oeste",
     subtitle: "Estadia regional com atmosfera tranquila e acolhedora.",
